@@ -1,0 +1,97 @@
+// Place all the styles related to the holidays controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* -- Substitute styles --*/
+
+/* self-clear floats */
+	
+	.group:after {
+		content: "."; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+	    }    
+	    /* Title: Reset default browser styles
+	    Author: dan@simplebits.com
+	    */
+	    
+	    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; border: 0; outline: 0; background: transparent;}
+	    	
+	    ol, ul {list-style: none;}
+	    
+	    blockquote, q {quotes: none;}
+	    
+	    :focus {outline: 0;}
+	    
+	    table {border-collapse: collapse; border-spacing: 0;}
+	    	
+	    	
+	    img, embed, object, video {max-width: 100%;}
+	    
+	    /* End of Reset browser styles */
+	* {
+		font-family: sans-serif;
+	}
+	
+	
+	.wrapper {
+		width: 960px;
+		margin: 0 auto;
+		
+	}
+	
+	
+	.image {
+		width: 150px;
+		height: 150px;
+		display: block;
+		float: left;
+		background-color: #312f2f;
+	}
+	
+	.title_banner {
+		background-color: #94bcff;
+		color: red;
+		width: 100%;
+		padding: 10px 10px;
+		margin: 10px 0;
+	}
+	
+	.details {
+		display: block;
+		float: left;
+		margin-left: 30px;
+		width: 750px;
+	}
+	
+	.result { padding-bottom: 70px; border-bottom: #EDEDED solid 1px; margin-bottom: 10px;}
+	
+	/* TEXT FORMATTING */
+	
+	.hotel_name { font-size: 150%;	}
+	.location, .details { font-size: 90%; margin-bottom: 10px;}
+	.details strong { margin-left:  10px; }
+	.remove {	
+		float: right;
+		color: white;
+		font-size: 90%;
+	}
+	
+	.prices {
+		float: left;
+		margin: 0 30px;
+		text-align: center;
+	}
+
+	/* -- FLASH MESSAGES --*/
+
+	.success {
+		  width: 100%;
+		  text-align: center;
+		  background-color: rgba(101,255,99,0.5);
+		  color: rgb(0,151,55);
+  }
+	
