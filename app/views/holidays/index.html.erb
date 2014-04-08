@@ -5,7 +5,7 @@
 	  <% if flash[:success].present? %>
           <div data-alert class="alert-box success">
             <%= flash[:success] %>
-          </div
+          </div>
       <% end %>
 
       <% if flash[:error].present? %>
@@ -21,7 +21,6 @@
       <% end %>
 
 
-
 <%= render "form" %>
 
 <h2>You are tracking <%= pluralize @holidays.size, "holiday" %></h2>
@@ -31,13 +30,14 @@
 
 
         <div class="result group">
-            <div class = "title_banner">
+            <!--<div class = "title_banner">-->
+            <div>
               <%= holiday.company.capitalize %>
               <div class = "remove"><%= link_to "x Remove", holiday_path(holiday), method: :delete, confirm: "Are you sure?" %> </div>
             </div>
           
           
-            <div class = "image"><img src"<%= holiday.image_url %>"></div>
+            <div class = "image"><img src="<%= holiday.image_url %>"></div>
         
             <div class="details group">
             
@@ -64,7 +64,9 @@
                 </div>    
               
               
-              <a href ="#">Book Now</a>
+              <a href ="<%= holiday.url %>" target="_blank">Book Now</a>
+              
+              
               
               
             

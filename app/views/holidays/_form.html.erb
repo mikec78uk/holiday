@@ -1,6 +1,6 @@
-<%= simple_form_for @holiday do |form| %>
+<%= simple_form_for Holiday.new do |form| %>
 
-	<%= form.input :url %>
+	<%= form.input :url, maxlength: false %>
 	<%= form.input :notifications %>
 	
 	<%= form.button :submit, "Start tracking this holiday" %>
