@@ -3,6 +3,6 @@
 	<%= form.input :url, maxlength: false %>
 	<%= form.input :notifications %>
 	
-	<%= form.button :submit, "Start tracking this holiday" %>
+	<%= form.button :submit, "Start tracking this holiday", data: { disable_with: "Grabbing holiday ..." } %>
 
 <% end %>

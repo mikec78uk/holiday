@@ -13,16 +13,17 @@ class HolidaysController < ApplicationController
 	end
 
 	def create
+
+		
 		@holiday = Holiday.new(holiday_params)
 		
 		
 		if @holiday.save
 			flash[:success] = "Holiday added to your list"
 			redirect_to root_path
-			#redirect_to :back
-			#redirect_to holidays_path
+
 		else
-			flash[:error] = "Sorry we can't track this holiday"
+			flash[:message] = @holiday.errors.full_messages
 			redirect_to root_path
 		end
 				

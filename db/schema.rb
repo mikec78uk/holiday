@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408095604) do
+ActiveRecord::Schema.define(version: 20140409073518) do
 
   create_table "histories", force: true do |t|
     t.integer  "holiday_id"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 20140408095604) do
     t.string   "image_url"
     t.string   "company"
     t.boolean  "notifications"
+    t.string   "dept_date"
+  end
+
+  create_table "urlvalidators", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

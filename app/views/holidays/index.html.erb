@@ -16,11 +16,15 @@
       
       <% if flash[:message].present? %>
           <div data-alert class="alert-box foundation">
-            <%= flash[:message] %>
+
+		      <li><%= flash[:message].first %></li>
+
           </div>
       <% end %>
 
 
+
+	  
 <%= render "form" %>
 
 <h2>You are tracking <%= pluralize @holidays.size, "holiday" %></h2>
@@ -44,29 +48,38 @@
               <p class="hotel_name"><%= holiday.hotel_name %></p>
               <p class="location"><%= holiday.location %></p>
               
-              <p class="details"><strong>Based on:</strong> <%= holiday.party_size%> • Flights from <%= holiday.flights %> • X nights</p>
+              <p class="details"><strong>Based on:</strong> <%= holiday.dept_date %> ‚<%= holiday.party_size%> ‚Ä¢ Flights from <%= holiday.flights %> ‚Ä¢ X nights</p>
             </div>
                 <div class="prices">
                   <p>Price <%= time_ago_in_words holiday.created_at %> ago</p>
-                  <p>£<%= holiday.initial_price %></p>
+                  <p><%= number_to_currency(holiday.initial_price, :unit => "£", :precision => 0) %></p>
                 </div>
                 
                 
                 <div class="prices">
                   <p>Change</p>
-                  <p>£100</p>
+                  <p>¬£100</p>
                 </div>    
                 
                 
                 <div class="prices">
                   <p>Price now</p>
-                  <p>£1,100</p>
+                  <p>¬£1,100</p>
                 </div>    
               
               
               <a href ="<%= holiday.url %>" target="_blank">Book Now</a>
               
               
+              <% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>
+              
+              <ul>
+              <% @history_prices.each do |x| %>
+              
+              
+              	<li><%= x.price %></li>
+              <% end %>
+              </ul>
               
               
             
