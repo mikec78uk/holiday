@@ -25,20 +25,14 @@ class Holiday < ActiveRecord::Base
 			# in css we would style up the title links using div#siteTable a.title
 			# Use the css selector to get the relvant bits of the page
 				
-
-				#@holiday = Holiday.new
 				# Get price, removes Â£ and turns to integer
 				self.initial_price = @real_html.css("span.price-total").text.gsub(/[^0-9,.]/, "").to_i			
-
-
-
 
 				self.hotel_name = @real_html.css("span.inline-title").text.delete("\n")
 				#@holiday.duration
 				self.location = @real_html.css("p#breadcrumbs").text.delete("\n").delete("\r")
 				self.flights = @real_html.css("span.airport").text
 				
-
 				# Gets party comp and removes " change"
 				self.party_size = @real_html.css("span.party-composition").text.delete("|")[0..-8]
 				self.dept_date = @real_html.css("span.itinerary-dates").first.text

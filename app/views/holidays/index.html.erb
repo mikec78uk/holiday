@@ -61,22 +61,27 @@
                   <p>¬£100</p>
                 </div>    
                 
+              <% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
                 
                 <div class="prices">
-                  <p>Price now</p>
-                  <p>¬£1,100</p>
+                  
+                  <% if @history_prices.map {|i| i.price }.last  == 0 %>
+                  	<p>Unavailable</p>
+                  	
+                  <% else %>
+                  	<p>Price now</p>
+				  	<p>¬£1,100</p>
+                  <% end %>
                 </div>    
               
               
               <a href ="<%= holiday.url %>" target="_blank">Book Now</a>
               
               
-              <% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>
+             
               
               <ul>
               <% @history_prices.each do |x| %>
-              
-              
               	<li><%= x.price %></li>
               <% end %>
               </ul>
