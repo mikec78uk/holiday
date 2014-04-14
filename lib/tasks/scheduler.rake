@@ -52,6 +52,9 @@ task mark_as_unavailable: :environment do
 		@history_prices = History.where(:holiday_id => holiday.id)
 		
 		if @history_prices.map {|i| i.price }.last(2) == [0,0]
+			# Send email to user if notifications is true
+
+
 			# Update Record without invoking callbacks, i.e. before_save
 			holiday.update_columns(is_live: false)
 		
@@ -59,7 +62,25 @@ task mark_as_unavailable: :environment do
 	end
 end
 
-task email_price_change: :environment do
 
+# Removes unavailable holidays - do this once a week 
+task remove_dead_holidays: :environment do
+		@holidays = Holiday.where(:is_live => false)
+
+		@holidays.each do |holiday|
+			@history_prices = History.where(:holiday_id => holiday.id)
+		
+			@history_prices.each do |history|
+				history.destroy
+			end
+
+			holiday.destroy
+		end
+end
+
+
+task email_price_change: :environment do
+	# Email User
+	# update last_emailed column
 	
 end

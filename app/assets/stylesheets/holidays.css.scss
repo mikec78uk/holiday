@@ -249,7 +249,11 @@
 				
 				/*----------- FORM FIELDS ------------*/
 				
-				/* Form Fields */
+				/* Hides mandatory field market */
+
+				abbr {
+					display: none;
+				}
 
 	input[type="text"],
 	input[type="email"],
@@ -435,20 +439,20 @@
         font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
         color: #fff;
         text-transform: uppercase;
-        background: #d83c3c;
+        background: #e87e03;
         -moz-border-radius: 0 3px 3px 0;
         -webkit-border-radius: 0 3px 3px 0;
         border-radius: 0 3px 3px 0;      
         text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
     }   
-      
+     /* 
     .form-wrapper .button:hover{		
         background: #e54040;
-    }	
+    }	*/
       
     .form-wrapper .button:active,
     .form-wrapper .button:focus{   
-        background: #c42f2f;    
+        background: #e87e03;    
     }
     
     .form-wrapper .button:before {
@@ -456,17 +460,17 @@
         position: absolute;
         border-width: 8px 8px 8px 0;
         border-style: solid solid solid none;
-        border-color: transparent #d83c3c transparent;
+        border-color: transparent #e87e03 transparent;
         top: 12px;
         left: -6px;
     }
     
     .form-wrapper .button:hover:before{
-        border-right-color: #e54040;
+        border-right-color: #e87e03;
     }
     
     .form-wrapper .button:focus:before{
-        border-right-color: #c42f2f;
+        border-right-color: #e87e03;
     }    
     
     .form-wrapper .button::-moz-focus-inner {
