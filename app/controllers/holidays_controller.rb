@@ -1,9 +1,13 @@
 class HolidaysController < ApplicationController
-
+	
+	
+	#Make sure logged in for all actions
+	before_action :authenticate_user! 
+	
 	layout 'holiday'
 
 	def index
-		@holidays = Holiday.where(:is_live => true).order("created_at desc")
+		@holidays = current_user.holidays.where(:is_live => true).order("created_at desc")
 		@holiday = Holiday.new
 	end
 	

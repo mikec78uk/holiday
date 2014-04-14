@@ -1,6 +1,7 @@
 class Holiday < ActiveRecord::Base
 
 	has_many :histories
+	belongs_to :user
 	
 	after_save :add_first_history
 	

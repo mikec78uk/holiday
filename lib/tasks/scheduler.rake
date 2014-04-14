@@ -60,5 +60,6 @@ task mark_as_unavailable: :environment do
 end
 
 task email_price_change: :environment do
+
 	
 end

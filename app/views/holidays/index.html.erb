@@ -27,9 +27,13 @@
 			<div id="searchContainer">
 				 <div class="form-wrapper cf">
 		  <%= render "form" %>
-				 	<div class="instruction-info">
-						<a href="#" id="view-instructions" class="instruction-link">What do I need to do?</a>
-					</div>
+				 	
+					 	<div class="instruction-info">
+					 	<% unless @holidays.blank? %>
+							<a href="#" id="view-instructions" class="instruction-link">What do I need to do?</a>
+						<% end %>
+						</div>
+					
 				 </div>
 	    	</div>
 		</div>
@@ -54,145 +58,145 @@
 	</div>
 
 
-
-<div class="wrapper group">
-
-	<div class="dashboard-heading group">
-		<h1 class="dashboard">You are watching <%= pluralize @holidays.size, "holiday" %></h1>
-		<p class="remove-all"><a href="">Remove all holidays</a></p>
-	</div>
-
-
-
-    <% @holidays.each do |holiday| %>
-
-
-		<div class="holiday group">
+<% unless @holidays.blank? %>
+		<div class="wrapper group">
 		
-			<% if holiday.company == "thomson" %>
-					<div class="thomson-company">
-			<% else %>
-					<div class="firstchoice-company">
-			<% end %>
-				<%= link_to "Close", holiday_path(holiday), method: :delete, confirm: "Are you sure you want to remove this holiday from your watchlist?", class: "close-btn-20" %>
+			<div class="dashboard-heading group">
+				<h1 class="dashboard">You are watching <%= pluralize @holidays.size, "holiday" %></h1>
+				<p class="remove-all"><a href="">Remove all holidays</a></p>
 			</div>
 		
-				<div class="contents">	
-					<div class="hotel-name"><%= holiday.hotel_name %></div>
-					<p class="tagline"><%= holiday.location %></p>
-					
-					<!-- NEEDS TO CHANGE TO ACTUAL IMAGE -->
-					<img src="/assets/img.png" class="main">
-					
-					
-					<p class="tagline margin-bottom">Departing:</p>
-					<p class="specifics"><%= holiday.dept_date %> <span class="tagline">from</span> <%= holiday.flights %> </p>
-					
-					<p class="tagline margin-bottom margin-top">Duration:</p>
-					<p class="specifics"><%= holiday.duration %> (<%=holiday.party_size %>)</p>
-								
-					
-						<div class="prices group">
-							<div class="original-price">
-								<p class="price"><%= number_to_currency(holiday.initial_price, :unit => "£", :precision => 0) %></p>
-								<p class="tagline margin-top">Price when added<br><%= time_ago_in_words holiday.created_at %> ago</p>
-							</div>
-							
-							<div class="now-price">
-							
-							<% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
-			                <% @today = @history_prices.map {|i| i.price }.last.to_i %>
-				                
-				                  
-				                  <% if @today  == 0 %>
-					                  	<p class="price"><i>Unavailable</i></p>
-									  	<p class="tagline margin-top">This may have sold out</p>
-				                  	
-				                  <% else %>
-				                  	<p class="price"><%= number_to_currency(@today, :unit => "£", :precision => 0) %> 
-				                  	
-				                  		<% if @today > holiday.initial_price %>
-				                  			<span class="up">(&#8593; £<%=@today - holiday.initial_price %>)</span></p>
-				                  			<p class="tagline margin-top">Price today</p>
-				                  		<% end %>
-				                  	
-								  		<% if @today < holiday.initial_price %>
-				                  			<span class="down">(&#8595; £<%= holiday.initial_price - @today %>)</span></p>
-				                  			<p class="tagline margin-top">Price today</p>
-				                  		<% end %>
-				                  		
-				                  		<% if @today == holiday.initial_price %>
-				                  			<p class="tagline margin-top">Price today</p>
-				                  			
-				                  		<% end %>
-				                  	
-				                  	
-				                  <% end %>
-				              </div>  
-							
-						
-						</div>
-					
-					<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button">View on <%= holiday.company %></a></div>
-					
-					<% unless @history_prices.map {|i| i.price }.uniq.length == 1 %>
-					
-						<div class="chart group">
-								<p class="tagline">Price movement in the last <%= pluralize @history_prices.size, "day" %></p>
-						
+		
+		
+		    <% @holidays.each do |holiday| %>
+		
+		
+				<div class="holiday group">
 				
-									<canvas id="canvas<%= holiday.id %>" height="200" width="280"></canvas>
+					<% if holiday.company == "thomson" %>
+							<div class="thomson-company">
+					<% else %>
+							<div class="firstchoice-company">
+					<% end %>
+						<%= link_to "Close", holiday_path(holiday), method: :delete, confirm: "Are you sure you want to remove this holiday from your watchlist?", class: "close-btn-20" %>
+					</div>
+				
+						<div class="contents">	
+							<div class="hotel-name"><%= holiday.hotel_name %></div>
+							<p class="tagline"><%= holiday.location %></p>
+							
+							<!-- NEEDS TO CHANGE TO ACTUAL IMAGE -->
+							<img src="/assets/img.png" class="main">
+							
+							
+							<p class="tagline margin-bottom">Departing:</p>
+							<p class="specifics"><%= holiday.dept_date %> <span class="tagline">from</span> <%= holiday.flights %> </p>
+							
+							<p class="tagline margin-bottom margin-top">Duration:</p>
+							<p class="specifics"><%= holiday.duration %> (<%=holiday.party_size %>)</p>
+										
+							
+								<div class="prices group">
+									<div class="original-price">
+										<p class="price"><%= number_to_currency(holiday.initial_price, :unit => "£", :precision => 0) %></p>
+										<p class="tagline margin-top">Price when added<br><%= time_ago_in_words holiday.created_at %> ago</p>
+									</div>
+									
+									<div class="now-price">
+									
+									<% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
+					                <% @today = @history_prices.map {|i| i.price }.last.to_i %>
+						                
+						                  
+						                  <% if @today  == 0 %>
+							                  	<p class="price"><i>Unavailable</i></p>
+											  	<p class="tagline margin-top">This may have sold out</p>
+						                  	
+						                  <% else %>
+						                  	<p class="price"><%= number_to_currency(@today, :unit => "£", :precision => 0) %> 
+						                  	
+						                  		<% if @today > holiday.initial_price %>
+						                  			<span class="up">(&#8593; £<%=@today - holiday.initial_price %>)</span></p>
+						                  			<p class="tagline margin-top">Price today</p>
+						                  		<% end %>
+						                  	
+										  		<% if @today < holiday.initial_price %>
+						                  			<span class="down">(&#8595; £<%= holiday.initial_price - @today %>)</span></p>
+						                  			<p class="tagline margin-top">Price today</p>
+						                  		<% end %>
+						                  		
+						                  		<% if @today == holiday.initial_price %>
+						                  			<p class="tagline margin-top">Price today</p>
+						                  			
+						                  		<% end %>
+						                  	
+						                  	
+						                  <% end %>
+						              </div>  
+									
+								
+								</div>
+							
+							<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button">View on <%= holiday.company %></a></div>
+							
+							<% unless @history_prices.map {|i| i.price }.uniq.length == 1 %>
+							
+								<div class="chart group">
+										<p class="tagline">Price movement in the last <%= pluralize @history_prices.size, "day" %></p>
 								
 						
-							<script>
-						
-								var lineChartData = {
-									labels : [
-									<% @history_prices.each do |x| %>
-										"",
-									<% end %>
-									],
-									datasets : [
-										{
-											<% if @today > holiday.initial_price %>
-				                  				fillColor : "rgba(209,0,15,0.5)",
-					                  		<% end %>
-					                  	
-									  		<% if @today < holiday.initial_price %>
-					                  			fillColor : "rgba(39,174,96,0.5)",
-					                  		<% end %>
-					                  		
-					                  		<% if @today == holiday.initial_price %>
-					                  			fillColor : "rgba(220,220,220,0.5)",
-					                  		<% end %>
-											
-											strokeColor : "rgba(220,220,220,1)",
-											pointColor : "rgba(220,220,220,1)",
-											pointStrokeColor : "#fff",
-											data : [
-											
+											<canvas id="canvas<%= holiday.id %>" height="200" width="280"></canvas>
+										
+								
+									<script>
+								
+										var lineChartData = {
+											labels : [
 											<% @history_prices.each do |x| %>
-												<%=x.price%>,
+												"",
 											<% end %>
+											],
+											datasets : [
+												{
+													<% if @today > holiday.initial_price %>
+						                  				fillColor : "rgba(209,0,15,0.5)",
+							                  		<% end %>
+							                  	
+											  		<% if @today < holiday.initial_price %>
+							                  			fillColor : "rgba(39,174,96,0.5)",
+							                  		<% end %>
+							                  		
+							                  		<% if @today == holiday.initial_price %>
+							                  			fillColor : "rgba(220,220,220,0.5)",
+							                  		<% end %>
+													
+													strokeColor : "rgba(220,220,220,1)",
+													pointColor : "rgba(220,220,220,1)",
+													pointStrokeColor : "#fff",
+													data : [
+													
+													<% @history_prices.each do |x| %>
+														<%=x.price%>,
+													<% end %>
+													]
+												}
 											]
+											
 										}
-									]
+								
+									var myLine = new Chart(document.getElementById("canvas<%= holiday.id %>").getContext("2d")).Line(lineChartData);
 									
-								}
-						
-							var myLine = new Chart(document.getElementById("canvas<%= holiday.id %>").getContext("2d")).Line(lineChartData);
-							
-							</script>
+									</script>
+									</div>
+								<% end %>	
 							</div>
-						<% end %>	
+							
 					</div>
-					
+			<%end%>
 			</div>
-	<%end%>
-	</div>
-
+<%end%>
 	  <%= render partial: 'layouts/footer' %>
-
+	  <% unless @holidays.blank? %>	
 	     <script>
 		   $(document).ready(function(){
 					  
@@ -203,6 +207,8 @@
 			});
 				
 			</script>
+		<%end%>
+			
 			<script>
 			//Equal line heights
 			equalheight = function(container){

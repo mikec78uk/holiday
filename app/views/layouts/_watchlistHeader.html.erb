@@ -1,5 +1,5 @@
 	<div class="nav-bar">
 		<div class="wrapper">
-			<a href="#" class="utility-link">Log out</a>
+			<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "utility-link" %>
 		</div>
 	</div>

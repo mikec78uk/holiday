@@ -73,6 +73,19 @@
 			 	display: table-cell;
 			 				 }
 			 
+			 h2.devise {
+				font-size: 1.5em;
+				padding: 20px 0px;
+				border-bottom: solid 1px #eee;
+			 }
+			 a.devise-shared {
+				 color: #e87e03;
+				 text-decoration: none;
+			 }
+			 a.devise-shared:hover {
+			 	text-decoration: underline;
+			 }
+			 
 			 /* --------- BUTTONS ----------- */
 			 
 				 .button {
@@ -238,7 +251,7 @@
 				
 				/* Form Fields */
 
-	/*input[type="text"],
+	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
 	    -moz-box-sizing: border-box;
@@ -252,7 +265,7 @@
 	    height: 20px;
 	    padding: 0.5rem;
 	    transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
-	    width: 400px;
+	    width: 480px;
 	    display: inline-table;
 
 	 }
@@ -274,17 +287,52 @@
 		display: block;
 	}
 	
-	input[type="submit"] {
-			border-color:rgb(154,154,154);
+	input[type="submit"].devise {
+			/*border-color:rgb(154,154,154);
 			border-width:1px;
 			border-style:solid;
 			-moz-border-radius:5px ;
 			height: 40px;
 			width: 80px;
-			display: inline-table;
-}*/
+			display: inline-table;*/
+			margin-bottom: 40px;
+			font-size: 14px;
+}
 
-
+	/* ----- DEVISE FORM ----*/
+	
+		.registration-form {
+			margin: 0 auto;
+			max-width: 500px;
+			border: solid 1px #eee;
+			padding: 0px 20px 30px 20px;
+			/*margin-top: 50px;*/
+			border-radius: 5px;
+			background-color: #ffffff;
+		}
+	
+		label {
+		 	display: block;
+			margin: 20px 0px 10px 0px;
+		 }
+		 
+		 
+		.form-actions {
+			text-align: center;
+			margin-top: 30px;
+		}
+		
+		.line-space {display: block;}
+		
+		/* ------- homepage flash ---------*/
+		
+		.home-flash, {
+			text-align: center;
+			color: #fff;
+			padding: 10px 0px;
+			background-color: #e74c3c;
+		}
+	
 	/* ----------- SEARCH BAR ------*/
 
     a {
@@ -345,7 +393,7 @@
     .boolean .optional {
 	    position: absolute;
 		left: 30px;
-		bottom: -50px;
+		bottom: -60px;
 		color: #ccc;
     }
     
