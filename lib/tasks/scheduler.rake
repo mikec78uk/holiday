@@ -44,3 +44,21 @@ task daily_price: :environment do
 	
 		
 end
+
+task mark_as_unavailable: :environment do
+	@holidays = Holiday.where(:is_live => true)
+	
+	@holidays.each do |holiday|
+		@history_prices = History.where(:holiday_id => holiday.id)
+		
+		if @history_prices.map {|i| i.price }.last(2) == [0,0]
+			# Update Record without invoking callbacks, i.e. before_save
+			holiday.update_columns(is_live: false)
+		
+		end
+	end
+end
+
+task email_price_change: :environment do
+	
+end

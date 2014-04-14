@@ -1,7 +1,9 @@
 class HolidaysController < ApplicationController
 
+	layout 'holiday'
+
 	def index
-		@holidays = Holiday.order("created_at desc")
+		@holidays = Holiday.where(:is_live => true).order("created_at desc")
 		@holiday = Holiday.new
 	end
 	
@@ -32,13 +34,22 @@ class HolidaysController < ApplicationController
 	
 	def destroy
 		@holiday = Holiday.find(params[:id])
+		@history_prices = History.where(:holiday_id => @holiday.id)
+		
+		
+		@history_prices.each do |history|
+			history.destroy
+		end
+				
 		@holiday.destroy
-		flash[:success] = "Holiday has been removed from your list"
+		
+		
+		flash[:success] = "Holiday has been removed from your watchlist"
 		redirect_to root_path
 	end
 	
-	
-	
+
+
 	
 	# Whitelisting params
 

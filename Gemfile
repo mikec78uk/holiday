@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -52,7 +52,5 @@ gem 'simple_form'
 gem 'httparty'
 gem 'nokogiri'
 
-
-# Social Login
-gem 'omniauth'
-gem 'omniauth-facebook'
+# For User Sign in
+gem 'devise'

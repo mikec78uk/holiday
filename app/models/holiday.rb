@@ -38,6 +38,73 @@ class Holiday < ActiveRecord::Base
 				self.dept_date = @real_html.css("span.itinerary-dates").first.text
 				
 				self.company = "thomson"
+				self.last_emailed = self.initial_price
+				
+				
+				# Duration by class name
+				
+				duration = @real_html.css("li.duration").first.child.attr('class')
+				
+				case duration
+					when 'd1'
+						self.duration = "1 night"
+					when 'd2'
+						self.duration = "2 nights"
+					when 'd3'
+						self.duration = "3 nights"
+					when 'd4'
+						self.duration = "4 nights"
+					when 'd5'
+						self.duration = "5 nights"
+					when 'd6'
+						self.duration = "6 nights"
+					when 'd7'
+						self.duration = "7 nights"
+					when 'd8'
+						self.duration = "8 nights"
+					when 'd9'
+						self.duration = "9 nights"
+					when 'd10'
+						self.duration = "10 nights"
+					when 'd11'
+						self.duration = "11 nights"
+					when 'd12'
+						self.duration = "12 nights"
+					when 'd13'
+						self.duration = "13 nights"
+					when 'd14'
+						self.duration = "14 nights"
+					when 'd15'
+						self.duration = "15 nights"
+					when 'd16'
+						self.duration = "16 nights"
+					when 'd17'
+						self.duration = "17 nights"
+					when 'd18'
+						self.duration = "18 nights"
+					when 'd19'
+						self.duration = "19 nights"
+					when 'd20'
+						self.duration = "20 nights"
+					when 'd21'
+						self.duration = "21 nights"
+					when 'd22'
+						self.duration = "22 nights"
+					when 'd23'
+						self.duration = "23 nights"
+					when 'd24'
+						self.duration = "24 nights"
+					when 'd25'
+						self.duration = "25 nights"
+					when 'd26'
+						self.duration = "26 nights"
+					when 'd27'
+						self.duration = "27 nights"
+					end 
+
+				
+				
+				
 				
 				@real_html.css("ul.plist").children.first.search('img').each do |img|
 					self.image_url = img['src'].to_s
@@ -68,10 +135,71 @@ class Holiday < ActiveRecord::Base
 				self.dept_date = @real_html.css("span.itinerary-dates").first.text
 				
 				self.company = "firstchoice"
+				self.last_emailed = self.initial_price
 				
 				@real_html.css("ul.plist").children.first.search('img').each do |img|
 					self.image_url = img['src'].to_s
 				end
+				# Duration by class name
+				
+				duration = @real_html.css("li.duration").first.child.attr('class')
+				
+				case duration
+					when 'd1'
+						self.duration = "1 night"
+					when 'd2'
+						self.duration = "2 nights"
+					when 'd3'
+						self.duration = "3 nights"
+					when 'd4'
+						self.duration = "4 nights"
+					when 'd5'
+						self.duration = "5 nights"
+					when 'd6'
+						self.duration = "6 nights"
+					when 'd7'
+						self.duration = "7 nights"
+					when 'd8'
+						self.duration = "8 nights"
+					when 'd9'
+						self.duration = "9 nights"
+					when 'd10'
+						self.duration = "10 nights"
+					when 'd11'
+						self.duration = "11 nights"
+					when 'd12'
+						self.duration = "12 nights"
+					when 'd13'
+						self.duration = "13 nights"
+					when 'd14'
+						self.duration = "14 nights"
+					when 'd15'
+						self.duration = "15 nights"
+					when 'd16'
+						self.duration = "16 nights"
+					when 'd17'
+						self.duration = "17 nights"
+					when 'd18'
+						self.duration = "18 nights"
+					when 'd19'
+						self.duration = "19 nights"
+					when 'd20'
+						self.duration = "20 nights"
+					when 'd21'
+						self.duration = "21 nights"
+					when 'd22'
+						self.duration = "22 nights"
+					when 'd23'
+						self.duration = "23 nights"
+					when 'd24'
+						self.duration = "24 nights"
+					when 'd25'
+						self.duration = "25 nights"
+					when 'd26'
+						self.duration = "26 nights"
+					when 'd27'
+						self.duration = "27 nights"
+					end 
 
 	    
 	    end
