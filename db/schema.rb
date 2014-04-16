@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414121124) do
+ActiveRecord::Schema.define(version: 20140415143909) do
+
+  create_table "contents", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "histories", force: true do |t|
     t.integer  "holiday_id"

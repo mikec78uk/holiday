@@ -1,0 +1,10 @@
+<p>Sorry, but we haven't been able to get a price for the following holiday for a couple of days:</p>
+<p></p>
+<p><strong>Hotel name:</strong><%=@holiday.hotel_name%> <%= @holiday.location%></p>
+<p><strong>Departing:</strong> <%=@holiday.dept_date%> from <%=@holiday.flights%></p>
+<p><strong>Party size:</strong> <%=@holiday.party_size%></p>
+<p></p>
+<p>This suggests that this is no longer available so we've removed it from your watchlist, but you can view your holiday on the <a href="<%=@holiday.url%>" target="_blank"><%=@holiday.company.capitalize%></a> website to make sure.</p>
+
+<p>All the best, </p>
+<p>Your friends at <a href="http://www.holidaytracker.co.uk" blank="_blank">Holidaytracker.co.uk</a></p>

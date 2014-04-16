@@ -1,0 +1,12 @@
+<p>It looks like the price for the following holiday has gone down by <strong>£<%=@holiday.initial_price - @last_price %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
+
+<p></p>
+<p><strong>Hotel name:</strong><%=@holiday.hotel_name%> <%= @holiday.location%></p>
+<p><strong>Departing:</strong> <%=@holiday.dept_date%> from <%=@holiday.flights%></p>
+<p><strong>Party size:</strong> <%=@holiday.party_size%></p>
+<p></p>
+
+<p><a href="<%=@holiday.url%>" target="_blank">View holiday on <%=@holiday.company.capitalize%> to take advantage of the reduced price</a></p>
+<p>All the best, </p>
+<p>Your friends at <a href="http://www.holidaytracker.co.uk" blank="_blank">Holidaytracker.co.uk</a></p>
+<p><i>Be aware: This price was correct at the time of retrieving it but may have changed since</i></p> 

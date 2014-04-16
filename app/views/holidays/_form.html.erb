@@ -5,7 +5,7 @@
 		 <%= form.input :url, as: :string, maxlength: false, input_html: {class: "url-entry"}, placeholder: "Paste your Thomson / Firstchoice holiday here...", label: false %>
 		 <%= form.input :notifications, as: :boolean, checked_value: true, unchecked_value: false, input_html: {class: "notifications"}, label: 'Email me when the price changes'  %>
 	
-		 <%= form.button :submit, "Add to watchlist", data: { disable_with: "Adding ..." } %>
+		 <%= form.button :submit, "Track holiday", data: { disable_with: "Adding ..." } %>
 
 		 <% end %>
 

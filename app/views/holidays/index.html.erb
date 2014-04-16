@@ -1,6 +1,14 @@
 
 	  
-	  <% if flash[:success].present? %>
+
+
+	<%= render partial: 'layouts/watchlistHeader' %>
+	  
+	  <header>
+		<div class="nav">
+			<div id="searchContainer">
+
+					  <% if flash[:success].present? %>
           <div data-alert class="flash success">
             <%= flash[:success] %>
           </div>
@@ -20,11 +28,7 @@
           </div>
       <% end %>
 
-	<%= render partial: 'layouts/watchlistHeader' %>
-	  
-	  <header>
-		<div class="nav">
-			<div id="searchContainer">
+				
 				 <div class="form-wrapper cf">
 		  <%= render "form" %>
 				 	
@@ -41,7 +45,7 @@
 	
 	<div id="instructions" class="instructions">
 		<div class="wrapper">
-			<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.firstchoice.co.uk" target="_blank" title="Firstchoice.co.uk (new window)">First Choice.co.uk</a></h2>
+			<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.firstchoice.co.uk" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></h2>
 		
 				
 		<p class="instruction-step step1"><span class="step-no">Step 1</span>Search for your ideal holiday</p>
@@ -62,8 +66,8 @@
 		<div class="wrapper group">
 		
 			<div class="dashboard-heading group">
-				<h1 class="dashboard">You are watching <%= pluralize @holidays.size, "holiday" %></h1>
-				<p class="remove-all"><a href="">Remove all holidays</a></p>
+				<h1 class="dashboard">You are tracking <%= pluralize @holidays.size, "holiday" %></h1>
+				<!--<p class="remove-all"><a href="">Remove all holidays</a></p>-->
 			</div>
 		
 		

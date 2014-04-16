@@ -40,7 +40,7 @@ task daily_price: :environment do
 	
 	end
 	
-	# Need to deal with sold out and holidays in the past
+
 	
 		
 end
@@ -53,7 +53,10 @@ task mark_as_unavailable: :environment do
 		
 		if @history_prices.map {|i| i.price }.last(2) == [0,0]
 			# Send email to user if notifications is true
-
+			if holiday.notifications == true
+				# send email
+				NotificationMailer.holiday_unavailable(holiday).deliver
+			end
 
 			# Update Record without invoking callbacks, i.e. before_save
 			holiday.update_columns(is_live: false)
@@ -80,7 +83,31 @@ end
 
 
 task email_price_change: :environment do
-	# Email User
-	# update last_emailed column
-	
+	# Find holidays where the price changed but doesn't equal 0
+	@holidays = Holiday.where(:is_live => true)
+
+	@holidays.each do |holiday|
+		# get the last price in the history
+		@last_price = History.where(:holiday_id => holiday.id).map {|i| i.price }.last
+			
+			# ignore the ones where the last price was zero
+			if @last_price != 0
+				# price has gone up
+				if @last_price > holiday.last_emailed
+					# email user
+					NotificationMailer.holiday_increased(holiday, @last_price).deliver
+					#update last emailed
+					holiday.update_columns(last_emailed: @last_price)
+				end
+				
+				if @last_price < holiday.last_emailed
+					# email user
+					NotificationMailer.holiday_decreased(holiday, @last_price).deliver
+					#update last emailed
+					holiday.update_columns(last_emailed: @last_price)
+				end
+
+			end
+	end	
+
 end

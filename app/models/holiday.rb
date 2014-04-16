@@ -245,7 +245,7 @@ class Holiday < ActiveRecord::Base
 
 	def must_contain_package_id			
 							   
-		errors.add(:base, "Must be hotel details page") unless self.url.include? "packageId"
+		errors.add(:base, "This must be the 'more details' page, click the 'what do I need to do' link below for more information") unless self.url.include? "packageId"
 	
 	end    														   
     															   

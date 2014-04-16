@@ -1,0 +1,92 @@
+<% @page_title = 'Terms of Service' %>
+
+	<div class = "wrapper">
+			
+	<div class="breadcrumb">
+		<strong>You are in:</strong>
+		<%= link_to "Home", root_path, class: "orange" %> &raquo 
+		Terms of service
+		
+	</div>
+
+<h1 class="legal">Terms of service</h1>
+
+<p class="legal">By using the Holidaytracker.co.uk ("Service" and "Company"), you are agreeing to be bound by the following terms and conditions ("Terms of Service").</p>
+
+<p class="legal">We reserve the right to update and change these Terms of Service without notice.</p>
+
+<p class="legal">Violation of any of the terms below may result in the termination of your account.</p>
+
+<h2 class="legal">Account Terms</h2>
+
+<ol class="legal">
+	<li>You are responsible for maintaining the security of your account and password. The Company cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</li>
+	<li>You are responsible for all activity that occurs under your account.</li>
+	<li>You must provide a valid email address, and any other information requested in order to complete the signup process.</li>
+	<li>Your login may only be used by one person – a single login shared by multiple people is not permitted.</li>
+</ol>
+
+
+
+<h2 class="legal">Cancellation and Termination</h2>
+
+<ol class="legal">
+
+	
+	<% if user_signed_in? %>
+	
+		
+			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any time by clicking: <%= link_to 'Delete my account', user_registration_path, class: "orange", :confirm => 'We hate to see you go...are you sure you want to delete your account?', :method => :delete %></li>
+			
+		
+	<%else%>
+		
+			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any time (this section will contain a link to cancel your account once you are logged in).</li>
+		
+	<% end %>
+	
+	
+	
+	
+	
+	
+	
+	<li>All of your content will immediately become inaccessible from the Service upon cancellation and all associated content will be deleted in due course. This information cannot be recovered once it has been permanently deleted.</li>
+	<li>The Company, in its sole discretion, has the right to suspend or terminate your account and refuse any and all current or future use of the Service for any reason at any time. Such termination of the Service will result in the deactivation or deletion of your Account or your access to your Account, and the forfeiture and relinquishment of all content in your account. The Company reserves the right to refuse service to anyone for any reason at any time.</li>
+</ol>
+
+
+<h2 class="legal">Modifications to the Service</h2>
+
+<ol class="legal">
+	<li>The Company reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, any part of the Service with or without notice.</li>
+	<li>The Company shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Service.</li>
+</ol>
+
+
+<h2 class="legal">Copyright and Content Ownership</h2>
+
+<ol class="legal">
+<li>We claim no intellectual property rights with regards to the content of the site, with exception of the Holidaytracker.co.uk logo. All materials belong to their respective copyright owners.</li>
+</ol>
+
+
+<h2 class="legal">General Conditions</h2>
+
+<ol class="legal">
+<li>Your use of the Service is at your sole risk. The service is provided on an “as is” and “as available” basis.</li>
+<li>You understand that the Company uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run the Service.</li>
+<li>You must not modify, adapt or hack the Service.</li>
+
+<li>We may, but have no obligation to, remove content and accounts that we determine in our sole discretion are unlawful or violates these Terms of Service.</li>
+
+<li>The Company does not warrant that (i) the service will meet your specific requirements, (ii) the service will be uninterrupted, timely, secure, or error-free, (iii) any prices displayed are accurate or reliable, (iv) any errors in the Service will be corrected.</li>
+<li>You expressly understand and agree that the Company shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses (even if the Company has been advised of the possibility of such damages), resulting from: (i) the use or the inability to use the service; (ii) the cost of procurement of substitute goods and services resulting from any goods, data, information or services purchased or obtained or messages received or transactions entered into through or from the service; (iii) unauthorised access to or alteration of your transmissions or data; (iv) statements or conduct of any third party on the service; (v) or any other matter relating to the service.</li>
+</ol>
+
+<p class="legal extra-margin">Any new features that augment or enhance the current Service, including the release of new tools and resources, shall be subject to the Terms of Service. Continued use of the Service shall constitute your consent to such changes.</p>
+
+	<p class="legal"><i>Last updated: April 2014</i></p>
+    </div>
+    
+    <%= render partial: 'layouts/footer' %>

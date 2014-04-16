@@ -22,7 +22,7 @@ class HolidaysController < ApplicationController
 
 		
 		@holiday = Holiday.new(holiday_params)
-		
+		@holiday.user_id = current_user.id
 		
 		if @holiday.save
 			flash[:success] = "Holiday added to your list"
@@ -52,7 +52,25 @@ class HolidaysController < ApplicationController
 		redirect_to root_path
 	end
 	
+	def delete_all_holidays
+		@holidays = current_user.holidays.where(:is_live => true)
 
+		@holidays.each do |holiday|
+			@history_prices = History.where(:holiday_id => holiday.id)
+
+			@history_prices.each do |history|
+				history.destroy
+			end
+				
+			holiday.destroy
+
+		end
+
+		# <%=link_to "Drive", :controller => "holidays", :action => "delete_all_holidays" %>
+		flash[:message] = "All holidays have been removed"
+		redirect_to root_path
+
+	end
 
 	
 	# Whitelisting params

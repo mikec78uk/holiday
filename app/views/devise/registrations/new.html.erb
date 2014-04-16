@@ -20,7 +20,7 @@
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
   </div>
-
+  <p class="terms-agreement">By signing up to Holidaytracker.co.uk you are agreeing to our <%= link_to "Terms of service", terms_page_path, class: "orange" %>.
   <div class="form-actions">
     <%= f.button :submit, "Start tracking prices", class: "devise" %>
   </div>

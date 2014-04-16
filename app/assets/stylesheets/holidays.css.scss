@@ -42,7 +42,7 @@
 			    
 			 header {
 			 	height: inherit;
-			 	background-color: #34495e;
+			 	background-color: #085a78; /* #34495e #b8b9b3*/
 			 	text-align: center;
 			 	vertical-align: middle;
 			 	line-height: 50px;
@@ -258,7 +258,7 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
-	    -moz-box-sizing: border-box;
+	    /*-moz-box-sizing: border-box;*/
 	    background-color: #FFFFFF;
 	    border: 1px solid #CCCCCC;
 	    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
@@ -482,15 +482,16 @@
     .instructions {
     
     	height: 400px;
-    	background-color: #7f8c8d;
+    	background-color: #f7f7f7; /*#7f8c8d;*/
+    	border-bottom: 1px solid #dddddd;
     
     }
     
-    .instructions p {color: #fff;}
+    .instructions p {color: #222222;}
 	
 	
 	.flash {
-		height: 40px;
+		/*height: 40px;*/
 		text-align: center;
 		line-height: 40px;
 		font-size: 16px;
@@ -503,12 +504,12 @@
 		h2.instruction-header {
 			text-align: center;
 			font-size: 20px;
-			color: #ffffff;
+			color: #222222;
 			padding: 20px 0px;
 			font-weight: normal;
 		}
 		
-		h2.instruction-header a {color: #ffffff; text-decoration: none;}	
+		h2.instruction-header a {color: #222222; text-decoration: none;}	
 		
 		a.instruction-link {}
 		
@@ -523,21 +524,21 @@
 			 	margin: 10px 5px;
 			 	float: left;
 			 	display: block;
-			 	color: #ffffff;
+			 	color: #222222;
 			 	text-align: center;			 	 	
 			 	padding-top: 230px;	
 		}
 		
 		span.step-no {font-weight: bold; display: block; padding-bottom: 10px;}
 		
-		.step1 {background: url(/assets/step-1-placeholder.png) no-repeat center top;}
-		.step1:hover {background: url(/assets/step1.gif) no-repeat center top;}
+		.step1 {background: url(/assets/step-1-1-placeholder.png) no-repeat center top;}
+		.step1:hover {background: url(/assets/step1-1.gif) no-repeat center top;}
 		
-		.step2 {background: url(/assets/step-2-placeholder.png) no-repeat center top;}
-		.step2:hover {background: url(/assets/step2.gif) no-repeat center top;}
+		.step2 {background: url(/assets/step-2-1-placeholder.png) no-repeat center top;}
+		.step2:hover {background: url(/assets/step2-1.gif) no-repeat center top;}
 		
-		.step3 {background: url(/assets/step-3-placeholder.png) no-repeat center top;}
-		.step3:hover {background: url(/assets/step3.gif) no-repeat center top;}
+		.step3 {background: url(/assets/step-3-1-placeholder.png) no-repeat center top;}
+		.step3:hover {background: url(/assets/step3-1.gif) no-repeat center top;}
 		
 	
 		.not-available {
@@ -563,7 +564,8 @@
 		}
 							
 		.nav-bar {
-			background-color: #000000;
+			/*background-color: #000000;*/
+			background-color: #333333;
 			padding: 10px 0px;
 			float: left;
 			width: 100%;
@@ -593,3 +595,15 @@
 		}
 		
 		footer ul li a {color: #e87e03 }
+
+
+		/* --------  LEGAL PAGES --------*/
+
+		h1.legal, h2.legal {font-size: 1.5em; padding: 20px 0px;}
+		p.legal {margin-bottom: 20px; line-height: 16px;}
+		ol.legal {counter-reset: li; list-style: decimal; margin-left: 60px; line-height: 20px;}
+		i {font-style: italic;}
+		ul.legal li {list-style: disc; margin-left: 60px; line-height: 20px; padding-bottom: 20px;}
+		a.orange {color: #e87e03;}
+		.browser-header, .extra-margin, .terms-agreement {margin-top: 20px;}
+
