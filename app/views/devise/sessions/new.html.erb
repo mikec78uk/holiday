@@ -1,4 +1,6 @@
+<%= render partial: 'layouts/watchlistHeader' %>
 
+<div class="top-padding"></div>
 <div class="wrapper">
 	<div class="registration-form">
 		<h2 class="devise">Sign in</h2>
@@ -18,7 +20,7 @@
 		  <div class="form-inputs">
 		    <%= f.input :email, required: false, autofocus: true %>
 		    <%= f.input :password, required: false %>
-		    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+		    
 		  </div>
 		
 		  <div class="form-actions">
@@ -29,3 +31,5 @@
 		<%= render "devise/shared/links" %>
 	</div>
 </div>
+<div class="top-padding-footer"></div>
+<%= render partial: 'layouts/footer' %>

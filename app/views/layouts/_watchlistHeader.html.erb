@@ -1,5 +1,11 @@
 	<div class="nav-bar">
 		<div class="wrapper">
-			<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "utility-link" %>
+			<%= link_to "Track Thomson and First Choice package holiday prices", root_path, class: "logo" %>
+			<% if user_signed_in? %>
+				<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "utility-link" %>
+				<%= link_to "Your Watchlist", holidays_path, class: "utility-link" %>
+			<% else %>
+				<%= link_to "Sign in", new_user_session_path, class: "utility-link" %>
+			<% end %>
 		</div>
 	</div>

@@ -3,6 +3,7 @@ HolidaySniper::Application.routes.draw do
 
   devise_for :users
 	resources :holidays
+	resources :contacts
 
 	resources :contents do
 	 member do

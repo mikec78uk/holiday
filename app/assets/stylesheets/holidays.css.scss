@@ -46,7 +46,7 @@
 			 	text-align: center;
 			 	vertical-align: middle;
 			 	line-height: 50px;
-			 	padding-top: 50px;
+			 	padding-top: 40px;
 			 } 
 			 
 			 .wrapper {
@@ -274,7 +274,24 @@
 
 	 }
 	 
-	 
+	 textarea {
+	    /*-moz-box-sizing: border-box;*/
+	    background-color: #FFFFFF;
+	    border: 1px solid #CCCCCC;
+	    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	    color: rgba(0, 0, 0, 0.75);
+	    display: block;
+	    font-family: inherit;
+	    font-size: 0.875rem;
+	    height: 250px;
+	    padding: 0.5rem;
+	    transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+	    width: 480px;
+	    display: inline-table;
+	    overflow: hidden;
+	    overflow-y:auto;
+
+	 }
 
 	 
 
@@ -314,7 +331,11 @@
 			border-radius: 5px;
 			background-color: #ffffff;
 		}
-	
+
+		.top-padding {padding-top: 100px;}
+		.top-padding-legal {padding-top: 50px;}
+		.top-padding-footer {padding-top: 200px;}
+
 		label {
 		 	display: block;
 			margin: 20px 0px 10px 0px;
@@ -481,7 +502,7 @@
     
     .instructions {
     
-    	height: 400px;
+    	height: 440px;
     	background-color: #f7f7f7; /*#7f8c8d;*/
     	border-bottom: 1px solid #dddddd;
     
@@ -540,6 +561,7 @@
 		.step3 {background: url(/assets/step-3-1-placeholder.png) no-repeat center top;}
 		.step3:hover {background: url(/assets/step3-1.gif) no-repeat center top;}
 		
+		.hover-hint-text {text-align: center; margin-bottom: 20px;}
 	
 		.not-available {
 			margin-top: 30px;
@@ -571,7 +593,7 @@
 			width: 100%;
 		}	
 		
-		.nav-bar a.utility-link {color: #FFFFFF; text-decoration: none; float: right; margin-right: 20px;}
+		.nav-bar a.utility-link {line-height: 20px; color: #FFFFFF; text-decoration: none; float: right; margin-right: 20px; font-weight: lighter;}
 		.nav-bar a.utility-link:hover, p.remove-all a:hover {text-decoration: underline;}
 						
 		p.remove-all a {
@@ -607,3 +629,23 @@
 		a.orange {color: #e87e03;}
 		.browser-header, .extra-margin, .terms-agreement {margin-top: 20px;}
 
+		/* ------- Logo ----- */
+
+		.logo {
+			display: block;
+height: 60px;
+width: 230px;
+border: none;
+background: url("/assets/package-holiday-tracker.png") no-repeat scroll left center;
+display: block;
+float: left;
+height: 20px;
+margin: 0;
+text-indent: -9999px;
+width: 250px;
+
+-webkit-background-size: auto 25px;
+-moz-background-size: auto 25px;
+-o-background-size: auto 25px;
+background-size: auto 25px;
+		}

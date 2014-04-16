@@ -1,0 +1,53 @@
+<%= render partial: 'layouts/watchlistHeader' %>
+
+<div class="top-padding"></div>
+<div class="wrapper">
+	<div class="registration-form">
+		<h2 class="devise">Contact Us</h2>
+		
+		<% if flash[:alert].present? %>
+          <div data-alert class="home-flash">
+            <%= flash[:alert] %>
+          </div>
+		<% end %>
+		<% if flash[:notice].present? %>
+          <div data-alert class="home-flash">
+            <%= flash[:notice] %>
+          </div>
+          <% end %>
+          <% if flash[:success].present? %>
+          <div data-alert class="flash success">
+            <%= flash[:success] %>
+          </div>
+		<% end %>
+
+
+		<%= simple_form_for @contact do |form| %>
+		
+						<%= form.input :contact_name, label: "Your name" %>
+						<%= form.input :email_address, label: "Email address (so we can respond)" %>
+					
+					
+		
+						<%= form.input :message, label: "Your message" %>
+				
+					
+					
+					<div class="centre">	
+						<%= form.button :submit, "Send message", data: { disable_with: "Sending message..." }, class: "devise"  %>
+					</div>
+		<% end %>
+
+
+
+
+
+
+
+
+
+
+			</div>
+</div>
+<div class="top-padding-footer"></div>
+<%= render partial: 'layouts/footer' %>

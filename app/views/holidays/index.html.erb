@@ -46,7 +46,7 @@
 	<div id="instructions" class="instructions">
 		<div class="wrapper">
 			<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.firstchoice.co.uk" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></h2>
-		
+			<p class="hover-hint-text"><i>Hover over the images for more information</i></p>
 				
 		<p class="instruction-step step1"><span class="step-no">Step 1</span>Search for your ideal holiday</p>
 		
@@ -114,7 +114,7 @@
 						                  
 						                  <% if @today  == 0 %>
 							                  	<p class="price"><i>Unavailable</i></p>
-											  	<p class="tagline margin-top">This may have sold out</p>
+											  	<p class="tagline margin-top">This may have sold out<br>or the site may be down</p>
 						                  	
 						                  <% else %>
 						                  	<p class="price"><%= number_to_currency(@today, :unit => "£", :precision => 0) %> 

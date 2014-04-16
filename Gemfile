@@ -51,6 +51,7 @@ gem 'simple_form'
 # For obtaining information
 gem 'httparty'
 gem 'nokogiri'
+#gem 'openssl'
 
 # For User Sign in
 gem 'devise'

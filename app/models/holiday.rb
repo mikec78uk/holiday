@@ -15,14 +15,20 @@ class Holiday < ActiveRecord::Base
     
         
     before_save do
-    
+    	#OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 	    if self.url.include? "thomson"
-	    
+	    	#http = Net::HTTP.new(uri.host, uri.port)
+
+			#http.use_ssl = true if @is_https
+			#http.verify_mode = OpenSSL::SSL::VERIFY_NONE if @is_https
+			#http.ssl_version = :SSLv3
+			
 	    	# get the raw html from reddit	
 			@raw_html = HTTParty.get(self.url)
 
 			# lets turn the raw html into real HTML we can parse
-			@real_html = Nokogiri::HTML(@raw_html)		
+			@real_html = Nokogiri::HTML(@raw_html)
 			# in css we would style up the title links using div#siteTable a.title
 			# Use the css selector to get the relvant bits of the page
 				
@@ -36,7 +42,10 @@ class Holiday < ActiveRecord::Base
 				
 				# Gets party comp and removes " change"
 				self.party_size = @real_html.css("span.party-composition").text.delete("|")[0..-8]
-				self.dept_date = @real_html.css("span.itinerary-dates").first.text
+				
+				unless @real_html.css("span.itinerary-dates").blank?
+					self.dept_date = @real_html.css("span.itinerary-dates").first.text
+				end
 				
 				self.company = "thomson"
 				self.last_emailed = self.initial_price
