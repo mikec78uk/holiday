@@ -6,6 +6,12 @@ gem 'rails', '4.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# I want to use Postgres on live site
+gem 'pg', group: :production
+
+# I want to set my site up with Heroku
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -36,7 +42,7 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -55,3 +61,14 @@ gem 'nokogiri'
 
 # For User Sign in
 gem 'devise'
+
+gem 'mail'
+
+# New relic for monitoring on Heroku
+gem 'newrelic_rpm'
+
+# For assessing Heroku problem
+gem 'gem_bench', :require => false, :group => :development
+
+# Rack Timeout to cut off long running requests
+gem "rack-timeout"
