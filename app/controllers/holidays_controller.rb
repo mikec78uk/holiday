@@ -26,11 +26,11 @@ class HolidaysController < ApplicationController
 		
 		if @holiday.save
 			flash[:success] = "Holiday added to your list"
-			redirect_to root_path
+			redirect_to holidays_path
 
 		else
 			flash[:message] = @holiday.errors.full_messages
-			redirect_to root_path
+			redirect_to holidays_path
 		end
 				
 	end
