@@ -8,25 +8,25 @@
 		<div class="nav">
 			<div id="searchContainer">
 
-					  <% if flash[:success].present? %>
-          <div data-alert class="flash success">
-            <%= flash[:success] %>
-          </div>
-      <% end %>
+		<% if flash[:success].present? %>
+	          <div data-alert class="flash success" id="flash-message-display">
+	            <%= flash[:success] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
+	          </div>
+      	<% end %>
 
-      <% if flash[:error].present? %>
-          <div data-alert class="flash">
-            <%= flash[:error] %>
-          </div>
-      <% end %>
+      	<% if flash[:error].present? %>
+	          <div data-alert class="flash" id="flash-message-display">
+	            <%= flash[:error] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
+	          </div>
+      	<% end %>
       
-      <% if flash[:message].present? %>
-          <div data-alert class="flash">
+      	<% if flash[:message].present? %>
+	          <div data-alert class="flash" id="flash-message-display">
 
-		      <li><%= flash[:message].first %></li>
+			      <li><%= flash[:message].first %>  <span class="close-btn-20" title="Close" id="flash-hide">Close</span></li>
 
-          </div>
-      <% end %>
+	          </div>
+      	<% end %>
 
 				
 				 <div class="form-wrapper cf">
@@ -209,9 +209,22 @@
 					  $("#instructions").slideToggle();
 				});
 			});
-				
-			</script>
+
+		   </script>
 		<%end%>
+
+		<script>
+		   $(document).ready(function(){
+					  
+				  
+				  $("#flash-hide").click(function(){
+					  $("#flash-message-display").slideToggle();
+				});
+			});
+
+		  </script>
+
+
 			
 			<script>
 			//Equal line heights
