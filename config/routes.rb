@@ -4,6 +4,7 @@ HolidaySniper::Application.routes.draw do
   devise_for :users
 	resources :holidays
 	resources :contacts
+	resources :holdings
 
 	resources :contents do
 	 member do
@@ -18,7 +19,7 @@ HolidaySniper::Application.routes.draw do
   get '/terms_of_service', to: 'contents#terms_of_service', as: :terms_page
 
 
-	root "holidays#index"
+	root "holdings#index"
 
 
 

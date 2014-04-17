@@ -1,0 +1,38 @@
+
+    <header>
+    	<div class="container">
+			
+			<section class="notify">
+				<h1>Holiday Tracker</h1>
+				<h2>Helping you get the best price for your package holiday</h2>
+				<p>Get notified when its ready.</p>
+				
+				<div id="signup">
+      			
+				<%= simple_form_for @holding do |form| %>
+
+					 <%= form.input :email, input_html: {class: "required email"}, placeholder: "Email address", label: false %>
+					
+					 <%= form.button :submit, "Notify", input_html: { disable_with: "Submitting" } %>
+
+					 <% end %>
+
+				   <% if flash[:success].present? %>
+			          <div class="message">
+			            <%= flash[:success] %>
+			          </div>
+			      <% end %>
+
+			      <% if flash[:error].present? %>
+			          <div data-alert class="message">
+			            <%= flash[:error] %>
+			          </div>
+			      <% end %>
+      					
+   				</div><!-- end signup for updates form -->
+   			</section><!-- end notify section -->
+		</div><!-- end container -->
+    </header> <!-- end header -->
+   
+	
+	

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"> 
+  <title>Holidaytracker.co.uk</title>
+  
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+}
+
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: inherit !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; height: 1000px }
+
+body, button, input, select, textarea {font-family: 'Raleway', sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #000; color: #fff; text-shadow: none; }
+::selection { background: #000; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #fff; text-decoration: none; -webkit-transition:color 0.2s linear; -moz-transition:color 0.2s linear;  }
+
+a:visited { color: #fff; }
+
+a:hover { color: #000; -webkit-transition:color 0.2s linear; -moz-transition:color 0.2s linear; }
+
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+   
+p { margin:0;padding:0; font-size:1.1em; line-height:1.6em; }   
+
+b, strong { font-weight: bold; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Main
+   ========================================================================== */
+header {
+	width:100%;
+	background:#6ccfb6;
+	text-align:center;
+	height: 100%;
+	}
+.container {
+	max-width:900px;
+	margin:0 auto;
+	padding:0;
+	}
+.intro .container {
+	text-align:center;
+	margin:0 auto;
+	padding:20px 0;
+	}
+.intro {
+	background:#f8f8f8;
+	width:100%;
+	-moz-box-shadow:inset 0 3px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,0.1);
+	box-shadow:inset 0 3px 5px rgba(0,0,0,0.1);
+	}
+
+/* =============================================================================
+   Main - Notify
+   ========================================================================== */
+
+.notify h1 {
+	font-size:2.5em;
+	text-shadow:0 1px 1px rgba(0,0,0,0.4);
+	}   
+.notify h2 {
+	text-align:left;
+	text-transform:none;
+	font-size:1.8em;
+	font-weight:400;
+	text-shadow:0 1px 1px rgba(0,0,0,0.4);
+	margin:0 0 20px;
+	padding:0;
+	}
+.notify p {
+	font-size:1.3em;
+	font-weight:400;
+	text-shadow:0 1px 1px rgba(0,0,0,0.4);
+	}
+.notify {
+	max-width:100%;
+	display:block;
+	vertical-align:top;
+	text-align:left;
+	position:relative;
+	z-index:100;
+	border-top:1px solid #fff;
+	margin:-18px auto;
+	padding:25px 50px 75px;
+	}      
+input[type="email"] {
+	width:90%;
+	border:0;
+	height:50px;
+	position:relative;
+	vertical-align:top;
+	font-size:1.2em;
+	border-radius:3px;
+	border-top:1px solid rgba(0,0,0,0.4);
+	margin:0 0 25px;
+	padding:0 0 0 20px;
+	}
+input[type="submit"] {
+	height:50px;
+	background:#455363;
+	position:relative;
+	vertical-align:top;
+	border:0;
+	width:125px;
+	color:#fff;
+	border-radius:3px;
+	font-size:1.2em;
+	font-weight:600;
+	letter-spacing:.1em;
+	border-bottom:2px solid rgba(0,0,0,0.3);
+	transition:all .1s linear;
+	-webkit-transition:all .1s linear 0;
+	}
+input#sub.submit:hover {
+	border-bottom:2px solid #2b323a;
+	background:#2b323a;
+	transition:all .1s linear;
+	-webkit-transition:all .1s linear 0;
+	}
+#signup {
+	margin-top:60px;
+	}
+label.error {
+	text-align:center;
+	font-size:1.2em;
+	display:inline-block;
+	float:right;
+	margin-right:7%;
+	padding:0 0 20px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.4);
+	}
+#cemail.required.email.error {
+	float:left;
+	}
+.message{
+	font-size:1.5em;
+	line-height:2em;
+	text-shadow:0 1px 1px rgba(0,0,0,0.4);
+	display: visible;
+	}
+
+	
+/* =============================================================================
+   Article - Features
+   ========================================================================== */	
+	
+article {
+	max-width:500px;
+	display:inline-block;
+	text-align:center;
+	font-size:1.1em;
+	margin:25px 0;
+	padding:0 15px;
+	}
+article h3 {
+	margin:20px 0;
+	padding:0;
+	}
+.feature-number {
+	font-family:'Average Sans', sans-serif;
+	width:75px;
+	height:75px;
+	border:2px solid #6ccfb6;
+	border-radius:50px;
+	text-align:center;
+	line-height:75px;
+	font-size:2.5em;
+	margin:0 auto;
+	}
+
+
+
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 855px) {
+	
+#phone{
+	left:0;
+	float:left;
+	}
+.notify{
+	border:0;
+	
+	display:inline-block; 
+	margin:100px 0 0 0; 
+	
+	padding:0;
+	}
+
+#subscribe input#cemail{
+	width:330px;
+	border:0;
+	height:49px;
+	position:relative;
+	vertical-align:top;
+	padding:0 0 0 20px;
+	font-size:1.2em; 
+	border-radius:3px;
+	margin: 0 20px 0 0;
+	border-top:1px solid rgba(0, 0, 0, 0.4);
+	}
+header{
+	min-height:100%;
+	overflow:hidden;
+	}
+article{
+	width:270px;
+	margin:75px 35px 75px 0;
+	padding:0;
+	}
+article h3{
+	padding:0;
+	margin:35px 0 35px 0;
+	}
+article:last-child{
+	margin: 0 0 75px 0;
+	}
+label.error{
+	position:relative;
+	margin-top:30px;
+ 	margin-right:0;
+	font-size:1.2em;
+	display:inline-block;
+	
+	}
+}
+
+@media only screen and (min-width: 900px) {
+  /* Style adjustments for viewports 900px and over go here */
+
+#end ul{
+	width:500px;
+	}
+.bottom ul{
+	width:500px;
+	}
+#phone{
+	background-position:center; 
+	position:relative;
+	}
+	
+}
+
+/* ==|== Custom Colors ======================================================
+   The below css will override the colors for the entire page making it easy 
+   to customize. background:#------ refers to changing the items background
+   color. color:#------ changes the text color. border-bottom-color:#000 changes
+   the bottom color of the border. The #subscribe input#sub.submit:hover 
+   changes the color of the notify button when the user hovers over it.
+   ========================================================================== */
+
+header{background:#6ccfb6;} /* Changes color of top background */
+footer {background:#455363;} /* Changes color of footer background */
+.feature-number{border-color: #6ccfb6; } /* Changes color of circles */
+#subscribe input#sub.submit {background:#455363; border-bottom-color:#343f4c; color:#fff; } /* Changes colors of notify button */
+#subscribe input#sub.submit:hover {background:#343f4c; border-bottom-color:#343f4c; } /* Changes colors of notify button on hover*/
+.notify{color:#fff;} /* Changes colors of text on the top section */
+article{color:#000;} /* Changes colors of text on the features section */
+#subscribe input#cemail{background:#fff; color:#000;} /* Changes colors of notify text box */
+
+/* ==|== Launch Page vs Landing Page ========================================
+   
+   To change from a signup page to a landing page with the app store logo linked
+   to the app store: move the below "display:none;" from the appstore to the
+   signup. Should look like below to display app logo and no signup.
+   
+   #signup{display:none;}
+   #appstore{}
+   
+   Don't forget to change the link to where your app can be purchased on the
+   index.html file.
+   
+   ========================================================================== */
+
+#signup{}
+#appstore{display:none;}</style>
+  <!-- CSS concatenated and minified via ant build script-->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,800,900,500,600,300,200' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
+  <%= favicon_link_tag '/favicon.ico' %>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+    	
+	
+</head>
+<body>
+
+	<%= yield %>
+
+
+
+
+
+</body>
+</html>
