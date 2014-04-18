@@ -110,6 +110,7 @@
 									
 									<% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
 					                <% @today = @history_prices.map {|i| i.price }.last.to_i %>
+					                
 						                
 						                  
 						                  <% if @today  == 0 %>
