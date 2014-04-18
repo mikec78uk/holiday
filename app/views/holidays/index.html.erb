@@ -110,6 +110,7 @@
 									
 									<% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
 					                <% @today = @history_prices.map {|i| i.price }.last.to_i %>
+					                <% @today_time = @history_prices.map {|i| i.created_at }.last.strftime('%H:%M') %>
 					                
 						                
 						                  
@@ -122,16 +123,16 @@
 						                  	
 						                  		<% if @today > holiday.initial_price %>
 						                  			<span class="up">(&#8593; £<%=@today - holiday.initial_price %>)</span></p>
-						                  			<p class="tagline margin-top">Price today</p>
+						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
 						                  		<% end %>
 						                  	
 										  		<% if @today < holiday.initial_price %>
 						                  			<span class="down">(&#8595; £<%= holiday.initial_price - @today %>)</span></p>
-						                  			<p class="tagline margin-top">Price today</p>
+						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
 						                  		<% end %>
 						                  		
 						                  		<% if @today == holiday.initial_price %>
-						                  			<p class="tagline margin-top">Price today</p>
+						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
 						                  			
 						                  		<% end %>
 						                  	
