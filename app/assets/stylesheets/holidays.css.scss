@@ -46,7 +46,7 @@
 			 	text-align: center;
 			 	vertical-align: middle;
 			 	line-height: 50px;
-			 	padding-top: 40px;
+			 	/*padding-top: 40px;*/
 			 } 
 			 
 			 .wrapper {
@@ -102,6 +102,7 @@
 				    text-decoration: none;
 				    display: inline-block;
 				    text-transform: uppercase;
+				    
 				
 				    }
 				    
@@ -590,8 +591,11 @@
 			/*background-color: #000000;*/
 			background-color: #333333;
 			padding: 10px 0px;
-			float: left;
+			/*float: left;*/
+			height: 20px;
 			width: 100%;
+			
+			
 		}	
 		
 		.nav-bar a.utility-link {line-height: 20px; color: #FFFFFF; text-decoration: none; float: right; margin-right: 20px; font-weight: lighter;}
@@ -650,3 +654,5 @@ width: 250px;
 -o-background-size: auto 25px;
 background-size: auto 25px;
 		}
+
+		span.error {color: red;}

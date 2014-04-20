@@ -2,7 +2,7 @@
 <div class="top-padding"></div>
 <div class="wrapper">
 	<div class="registration-form">
-    	<h2 class="devise">Register</h2>
+    	<h2 class="devise">Register to start tracking holiday prices</h2>
     		<% if flash[:alert].present? %>
               <div data-alert class="home-flash">
                 <%= flash[:alert] %>
@@ -19,7 +19,7 @@
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true %>
+        <%= f.input :password, required: true, label: "Password (minimum 8 characters)" %>
         <%= f.input :password_confirmation, required: true %>
       </div>
       <p class="terms-agreement">By signing up to Holidaytracker.co.uk you are agreeing to our <%= link_to "Terms of service", terms_page_path, class: "orange" %>.

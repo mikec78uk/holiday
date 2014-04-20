@@ -1,0 +1,26 @@
+<% @page_title = 'What are you looking for?' %>
+
+<%= render partial: 'layouts/watchlistHeader' %>
+<div class="top-padding"></div>
+<div class="wrapper">
+
+<h1 class="legal">We can't find what you're looking for</h1>
+	
+<p class="legal">Try checking the URL for errors, or maybe the page you're looking for no longer exists.</p>
+
+<div class="centre">
+
+
+
+			<% if user_signed_in? %>
+				<%= link_to "Your Watchlist", holidays_path, class: "button" %>
+			<% else %>
+				<%= link_to "Home", root_path, class: "button" %>
+			<% end %>
+</div>
+
+<div class="top-padding-footer"></div>
+<%= render partial: 'layouts/footer' %>
+</div>
+
+

@@ -1,0 +1,26 @@
+<% @page_title = 'Something went wrong' %>
+
+<%= render partial: 'layouts/watchlistHeader' %>
+<div class="top-padding"></div>
+<div class="wrapper">
+
+<h1 class="legal">Sorry, we had a little problem</h1>
+	
+<p class="legal">Sometimes this happens when we can't get the price for your holiday. </p>
+
+<p class="legal">If you filtered your search results before navigating to the <i>Holiday Details</i> page, try conducting a new search on <a href="http://www.thomson.co.uk" target="_blank" class = "orange">Thomson</a> or  <a href="http://www.firstchoice.co.uk" target="_blank" class = "orange">First Choice</a> for the hotel you're after and navigate to the <i>Holiday Details</i> page <strong><i>without</i></strong> filtering your results. </p>
+
+<div class="centre">
+
+
+
+			<% if user_signed_in? %>
+				<%= link_to "Your Watchlist", holidays_path, class: "button" %>
+			<% else %>
+				<%= link_to "Home", root_path, class: "button" %>
+			<% end %>
+</div>
+
+<div class="top-padding-footer"></div>
+<%= render partial: 'layouts/footer' %>
+</div>

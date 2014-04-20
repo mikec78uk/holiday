@@ -49,7 +49,7 @@ class HolidaysController < ApplicationController
 		
 		
 		flash[:success] = "Holiday has been removed from your watchlist"
-		redirect_to root_path
+		redirect_to holidays_path
 	end
 	
 	def delete_all_holidays

@@ -1,0 +1,25 @@
+<% @page_title = 'Unable to process request' %>
+
+<%= render partial: 'layouts/watchlistHeader' %>
+<div class="top-padding"></div>
+<div class="wrapper">
+
+<h1 class="legal">We can't process your request</h1>
+	
+<p class="legal">Maybe you tried to change something you didn't have access to?</p>
+
+<div class="centre">
+
+
+
+			<% if user_signed_in? %>
+				<%= link_to "Your Watchlist", holidays_path, class: "button" %>
+			<% else %>
+				<%= link_to "Home", root_path, class: "button" %>
+			<% end %>
+</div>
+
+<div class="top-padding-footer"></div>
+<%= render partial: 'layouts/footer' %>
+</div>
+

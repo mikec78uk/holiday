@@ -1,3 +1,77 @@
 // Place all the styles related to the contents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-main {
+	
+	background-color: #e8eef8;
+	/*background-image: url(/assets/package-holiday-sun.png);*/
+	background-image: url(/assets/package-holiday-bg3.png);
+	background-repeat: no-repeat;
+	/*background-position: 95% 75px;*/
+	background-position: center center;
+	height: 600px;
+	border-bottom: 1px solid #d9d9d9;
+	position: relative;
+	background-color: #0094fd;
+	
+	
+	
+}
+
+h1.h1home {
+	font-size: 34px;
+	font-weight: normal;
+	line-height: 1.4;
+	color: #ffffff;
+	/*text-align: center;*/
+	/*padding-top: 120px;*/
+	padding-bottom: 30px;
+}
+
+span.tag {font-size: 28px;}
+
+h2.h2home {
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 30px;
+	padding-top: 30px;
+	margin-left: 390px;
+	border-bottom: 1px solid #d9d9d9;
+	padding-bottom: 10px;
+}
+
+.usp {
+	float: left;
+	margin-left: 70px;
+	width: 550px;
+	padding-top: 20px;
+	height: 100px;
+}
+
+
+
+.usp p{
+  padding-left: 70px;
+  font-size: 16px;     
+}
+		
+		
+.usp-price {background: url(/assets/chart.png) no-repeat left top; background-size: 50px;}
+.usp-notification {background: url(/assets/email.png) no-repeat left top; background-size: 50px;}
+
+.usp-margin-top {
+	margin-top: 40px;
+}
+
+.hero {
+	padding: 20px;
+	background-color: rgba(51,51,51,0.9);
+	position: absolute;
+	bottom: 30px;
+	
+}
+
+
+
+
