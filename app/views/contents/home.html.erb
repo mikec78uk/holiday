@@ -2,10 +2,11 @@
 <% this_year = time.year %>
 <% next_year = this_year + 1 %>
 
-<% @page_title = "Track prices of Thomson and First Choice "  + this_year.to_s + " & " + next_year.to_s + " Package Holidays" %>
+<% @page_title = "Track package holiday prices from Thomson and First Choice for "  + this_year.to_s + " & " + next_year.to_s %>
+<% @meta_description = "MONITOR PRICES of Thomson and First Choice "  + this_year.to_s + " & " + next_year.to_s + " package holidays and see when the price goes up or down. SAVE MONEY by buying at the right time." %>
 
 <%= render partial: 'layouts/watchlistHeader' %>
-
+	
 <div class="home-main">
 	<div class="wrapper">
 		<div class="hero">

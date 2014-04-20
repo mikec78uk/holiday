@@ -12,7 +12,7 @@
 //
 //= require jquery.min
 //= require jquery_ujs
-
+//= require analytics
 //= require Chart
 //= require excanvas
 //= require_self 

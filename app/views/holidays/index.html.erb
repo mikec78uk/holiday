@@ -9,19 +9,19 @@
 			<div id="searchContainer">
 
 		<% if flash[:success].present? %>
-	          <div data-alert class="flash success" id="flash-message-display">
+	          <div data-alert class="flash success" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
 	            <%= flash[:success] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
 	          </div>
       	<% end %>
 
       	<% if flash[:error].present? %>
-	          <div data-alert class="flash" id="flash-message-display">
+	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);”>
 	            <%= flash[:error] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
 	          </div>
       	<% end %>
       
       	<% if flash[:message].present? %>
-	          <div data-alert class="flash" id="flash-message-display">
+	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);>
 
 			      <li><%= flash[:message].first %>  <span class="close-btn-20" title="Close" id="flash-hide">Close</span></li>
 
@@ -143,7 +143,7 @@
 								
 								</div>
 							
-							<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button">View on <%= holiday.company %></a></div>
+							<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
 							
 							<% unless @history_prices.map {|i| i.price }.uniq.length == 1 %>
 							
