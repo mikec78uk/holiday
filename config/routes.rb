@@ -1,7 +1,7 @@
 HolidaySniper::Application.routes.draw do
 
-
-  	devise_for :users
+	# Modified from just :users due to new destination after registration
+  	devise_for :users, :controllers => { :registrations => "registrations" }
 	resources :holidays
 	resources :contacts
 	resources :holdings
@@ -11,6 +11,7 @@ HolidaySniper::Application.routes.draw do
 		  get 'home'
 		 end
 	end
+
 
 
   	# Added for statiic pages		
