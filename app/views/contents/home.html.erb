@@ -10,16 +10,16 @@
 <div class="home-main">
 	<div class="wrapper">
 		<div class="hero">
-			<h1 class="h1home"><span class="tag">Monitor package holiday prices from</span><br>Thomson and First Choice<br><span class="tag">so you always know the best time to buy</span></h1>
+			<h1 class="h1home"><span class="tag">Monitor package holiday prices from</span><br>Thomson and First Choice<br><span class="tag">and choose the best time to buy</span></h1>
 
 			
-
+			<div class="centre">
 				<% if user_signed_in? %>
 					<%= link_to "View Your Watchlist", holidays_path, class: "button" %>
 				<% else %>
 					<%= link_to "Start tracking prices for free!", new_user_registration_path, class: "button" %>
 				<% end %>
-				
+			</div>
 				<!-- AddThis Button BEGIN -->
 				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 				<p class="share">Spread the word:</p>
