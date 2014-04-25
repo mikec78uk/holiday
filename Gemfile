@@ -66,7 +66,7 @@ gem 'devise'
 gem 'mail'
 
 # New relic for monitoring on Heroku
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.8.0.218'
 
 # For assessing Heroku problem
 gem 'gem_bench', :require => false, :group => :development
