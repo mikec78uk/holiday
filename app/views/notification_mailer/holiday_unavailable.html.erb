@@ -4,7 +4,18 @@
 <p><strong>Departing:</strong> <%=@holiday.dept_date%> from <%=@holiday.flights%></p>
 <p><strong>Party size:</strong> <%=@holiday.party_size%></p>
 <p></p>
-<p>This suggests that this is no longer available so we've removed it from your watchlist, but you can view your holiday on the <a href="<%=@holiday.url%>" target="_blank"><%=@holiday.company.capitalize%></a> website to make sure.</p>
+<p>This suggests that this is no longer available so we've removed it from your watchlist, but you can view your holiday on the 
+
+
+	<% if @holiday.company == "thomson" %>
+								
+								<a href="<%=@holiday.url%>" target="_blank">View on <%=@holiday.company.capitalize%></a> website to make sure.</p>
+
+							<% else %>
+
+								<a href="http://www.anrdoezrs.net/links/7510289/type/dlg/sid/holiday-tracker/<%=@holiday.url%>" target="_blank">View on <%=@holiday.company.capitalize%></a> website to make sure.</p>
+
+							<% end %>
 
 <p>All the best, </p>
 <p>Your friends at <a href="http://www.holidaytracker.co.uk" blank="_blank">Holidaytracker.co.uk</a></p>

@@ -1,3 +1,5 @@
+<!-- This should not be holiday.initial_price, this should be the last emailed price -->
+
 <p>It looks like the following holiday has increased in price by <strong>£<%=@last_price - @holiday.initial_price %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
 
 <p></p>
@@ -6,8 +8,17 @@
 <p><strong>Party size:</strong> <%=@holiday.party_size%></p>
 <p></p>
 
+							<% if @holiday.company == "thomson" %>
+								
+								<p><a href="<%=@holiday.url%>" target="_blank">View on <%=@holiday.company.capitalize%></a></p>
 
-<p><a href="<%=@holiday.url%>" target="_blank">View on <%=@holiday.company.capitalize%></a></p>
+							<% else %>
+
+								<p><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/sid/holiday-tracker/<%=@holiday.url%>" target="_blank">View on <%=@holiday.company.capitalize%></a></p>
+
+							<% end %>
+
+
 <p>All the best, </p>
 <p>Your friends at <a href="http://www.holidaytracker.co.uk" blank="_blank">Holidaytracker.co.uk</a></p>
 <p><i>Be aware: This price was correct at the time of retrieving it but may have changed since</i></p> 

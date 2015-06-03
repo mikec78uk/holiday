@@ -143,7 +143,17 @@
 								
 								</div>
 							
-							<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
+
+							<% if holiday.company == "thomson" %>
+								<div class="centre"><a href="<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
+							<% else %>
+								<div class="centre"><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/sid/holiday-tracker/<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
+							<% end %>
+
+
+
+
+							
 							
 							<% unless @history_prices.map {|i| i.price }.uniq.length == 1 %>
 							
