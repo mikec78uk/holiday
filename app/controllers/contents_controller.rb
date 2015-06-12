@@ -1,7 +1,11 @@
 class ContentsController < ApplicationController
 
 	def home
-		render
+		if user_signed_in?
+			redirect_to holidays_path
+		else
+			render
+		end
 	end
 	
 	def cookie_policy
