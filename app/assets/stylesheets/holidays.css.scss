@@ -11,7 +11,7 @@
 			
 			html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; border: 0; outline: 0; background: transparent;}
 				
-			ol, ul {list-style: none;}
+			/*ol, ul {list-style: none;}*/
 			
 			blockquote, q {quotes: none;}
 			
@@ -54,10 +54,11 @@
 			 	margin: 0 auto;
 			 }
 			 .homewrapper {
-			 	width: 800px;
+			 	width: 960px;
 			 	margin: 0 auto;
 			 	margin-top: 20px;
 			 	margin-bottom: 20px;
+			 	overflow:auto;
 
 			 }
 			 
@@ -71,6 +72,18 @@
 			 .holiday {			 	
 				max-width: 298px;
 			 	margin: 10px 10px 10px 10px;
+			 	float: left;
+			 	display: block;
+			 	border: 1px solid #eee;
+			 	position: relative;
+			 	background-color: #fff;
+			 	border-radius: 5px;	
+			 	display: table-cell;
+			 				 }
+
+			 .holidayhome {			 	
+				max-width: 298px;
+			 	margin: 10px 10px 10px 70px;
 			 	float: left;
 			 	display: block;
 			 	border: 1px solid #eee;
@@ -206,6 +219,8 @@
 					font-size: 18px;
 					margin: 30px 0px 20px 10px;
 					float: left;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: normal;
 				}
 				
 				
@@ -366,7 +381,7 @@
 			text-align: center;
 			color: #fff;
 			padding: 10px 0px;
-			background-color: #e74c3c;
+			background-color: #cc0033;
 		}
 	
 	/* ----------- SEARCH BAR ------*/
@@ -528,12 +543,12 @@
 		text-align: center;
 		line-height: 40px;
 		font-size: 16px;
-		background-color: #e74c3c;
+		background-color: #cc0033;
 		color: #ffffff;
 		position: relative;
 	}
 	.flash li {list-style: none;}
-	.success {background-color: #27ae60;}
+	.success {background-color: #E65100; /*#009688*/}
 			
 		h2.instruction-header {
 			text-align: center;

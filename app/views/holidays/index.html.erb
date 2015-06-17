@@ -8,25 +8,7 @@
 		<div class="nav">
 			<div id="searchContainer">
 
-		<% if flash[:success].present? %>
-	          <div data-alert class="flash success" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
-	            <%= flash[:success] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
-	          </div>
-      	<% end %>
 
-      	<% if flash[:error].present? %>
-	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);”>
-	            <%= flash[:error] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
-	          </div>
-      	<% end %>
-      
-      	<% if flash[:message].present? %>
-	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);>
-
-			      <li><%= flash[:message].first %>  <span class="close-btn-20" title="Close" id="flash-hide">Close</span></li>
-
-	          </div>
-      	<% end %>
 
 				
 				 <div class="form-wrapper cf">
@@ -70,7 +52,25 @@
 				<!--<p class="remove-all"><a href="">Remove all holidays</a></p>-->
 			</div>
 		
-		
+				<% if flash[:success].present? %>
+	          <div data-alert class="flash success" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
+	            <%= flash[:success] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
+	          </div>
+      	<% end %>
+
+      	<% if flash[:error].present? %>
+	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);”>
+	            <%= flash[:error] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
+	          </div>
+      	<% end %>
+      
+      	<% if flash[:message].present? %>
+	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);>
+
+			      <li><%= flash[:message].first %>  <span class="close-btn-20" title="Close" id="flash-hide">Close</span></li>
+
+	          </div>
+      	<% end %>
 		
 		    <% @holidays.each do |holiday| %>
 		

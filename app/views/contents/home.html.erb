@@ -18,9 +18,9 @@
           </div>
 <% end %>
 
-	<div class="homewrapper">
+	<div class="homewrapper container">
 
-			<div class="holiday">
+			<div class="holidayhome">
 		
 				<div class="thomson-company">
 					<span class="close-btn-20">Close</span>
@@ -93,20 +93,20 @@
 				<h1 class="h1home">Did you know the price of package holidays can change on a daily basis?</h1>
 
 						<ul class="homeusp">
-							<li>&raquo Track the prices of <a href="http://www.thomson.co.uk/" target="_blank" title="Thomson.co.uk (new window)" class="usplink">Thomson</a> and <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)" class="usplink">First Choice</a> package holidays</a></li>
-							<li>&raquo Monitor how the price changes over time</li>
-							<li>&raquo Receive notifications by email when the price changes</li>
-							<li>&raquo Time when you buy so you can get the best deal</li>
+							<li>Track the prices of <a href="http://www.thomson.co.uk/" target="_blank" title="Thomson.co.uk (new window)" class="usplink">Thomson</a> and <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)" class="usplink">First Choice</a> package holidays</a></li>
+							<li>Monitor how the price changes over time</li>
+							<li>Receive notifications by email when the price changes</li>
+							<li>Time when you buy so you can get the best deal</li>
 						</ul>
 
 
-				<div class="centre">
+				
 					<% if user_signed_in? %>
 						<%= link_to "View Your Watchlist", holidays_path, class: "button" %>
 					<% else %>
 						<%= link_to "Start tracking holidays for FREE!", new_user_registration_path, class: "button" %>
 					<% end %>
-				</div>
+				
 
 				<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -137,7 +137,7 @@
 		<p class="instruction-step step2"><span class="step-no">Step 2</span><span class="indent">Select "more details" on<br>the holiday you want to monitor</span></p>	
 		
 		
-		<p class="instruction-step step3"><span class="step-no">Step 3</span>Copy the web address in it's entirety and add it to you <i>Holidaytracker.co.uk Watchlist</i></p>
+		<p class="instruction-step step3"><span class="step-no">Step 3</span>Copy the web address in it's entirety and add it to your <i>Holidaytracker.co.uk Watchlist</i></p>
 		
 		
 		
@@ -153,3 +153,6 @@
 
 
 <%= render partial: 'layouts/footer' %>
+
+
+
