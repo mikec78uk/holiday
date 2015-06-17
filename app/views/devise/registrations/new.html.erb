@@ -21,8 +21,8 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, label: "Password (minimum 8 characters)" %>
+        <%= f.input :email, required: true, autofocus: true,label: "Email Address", hint: "So we can contact you when the price changes" %>
+        <%= f.input :password, required: true, label: "Create a Password", hint: "Passwords should be at least  8 characters" %>
         <%= f.input :password_confirmation, required: true %>
       </div>
       <p class="terms-agreement">By signing up to Holidaytracker.co.uk you are agreeing to our <%= link_to "Terms of service", terms_page_path, class: "orange" %>.

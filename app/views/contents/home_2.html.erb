@@ -1,0 +1,158 @@
+<% time = Time.new %>
+<% this_year = time.year %>
+<% next_year = this_year + 1 %>
+
+<% @page_title = "Track package holiday prices from Thomson and First Choice for "  + this_year.to_s + " & " + next_year.to_s %>
+<% @meta_description = "MONITOR PRICES of Thomson and First Choice "  + this_year.to_s + " & " + next_year.to_s + " package holidays and see when the price goes up or down. SAVE MONEY by buying at the right time." %>
+
+<%= render partial: 'layouts/watchlistHeader' %>
+	
+<div class="home-main">
+	<div class="wrapper">
+		<div class="hero">
+			<h1 class="h1home"><span class="tag">Monitor package holiday prices from</span><br>Thomson and First Choice<br><span class="tag">and choose the best time to buy</span></h1>
+
+			
+			<div class="centre">
+				<% if user_signed_in? %>
+					<%= link_to "View Your Watchlist", holidays_path, class: "button" %>
+				<% else %>
+					<%= link_to "Start tracking prices for free!", new_user_registration_path, class: "button" %>
+				<% end %>
+			</div>
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+				<p class="share">Spread the word:</p>
+				<a class="addthis_button_facebook"></a>
+				<a class="addthis_button_twitter"></a>
+				<a class="addthis_button_pinterest_share"></a>
+				<a class="addthis_button_tumblr"></a>
+				<a class="addthis_button_google_plusone_share"></a>
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=mikec78uk"></script>
+				<!-- AddThis Button END -->
+
+		</div>
+		
+	</div>
+</div>
+
+
+
+<div id="instructions" class="instructions">
+		<div class="wrapper">
+			<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></h2>
+				
+		<p class="instruction-step step1"><span class="step-no">Step 1</span>Search for your ideal holiday</p>
+		
+		
+		<p class="instruction-step step2"><span class="step-no">Step 2</span><span class="indent">Select "more details" on<br>the holiday you want to monitor</span></p>	
+		
+		
+		<p class="instruction-step step3"><span class="step-no">Step 3</span>Copy the web address in it's entirety and add it to you <i>Holidaytracker.co.uk Watchlist</i></p>
+		
+		
+		
+		</div>
+	</div>
+
+
+
+
+
+
+
+<div class = "wrapper group">
+	<div class="holiday">
+		
+		<div class="thomson-company">
+			<span class="close-btn-20">Close</span>
+		</div>
+		
+		<div class="contents">	
+			<p class="hotel-name">Villa Marchena</p>
+			<p class="tagline">in Pollensa, Majorca</p>
+			
+			<img src="/assets/img.png" class="main">
+			
+			
+			<p class="tagline margin-bottom">Departing:</p>
+			
+			<p class="specifics">Thu 25 Jun <%=next_year%> <span class="tagline">from</span> Birmingham </p>
+			
+			<p class="tagline margin-bottom margin-top">Duration:</p>
+			<p class="specifics">7 nights (2 adults, 1 child)</p>
+						
+			
+			<div class="prices group">
+				<div class="original-price">
+					<p class="price">£2,748</p>
+					<p class="tagline margin-top">Price when added<br>around 7 days ago</p>
+				</div>
+				
+				<div class="now-price">
+					<p class="price">£2,648 <span class="down">(&#8595; £100)</span></p>
+					<p class="tagline margin-top">Price today</p>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			
+			<div class="chart group">
+					<p class="tagline">Price movement in the last 7 days</p>
+			
+	
+						<canvas id="canvas1" height="200" width="280"></canvas>
+					
+			
+				<script>
+			
+					var lineChartData = {
+						labels : ["","","","","","",""],
+						datasets : [
+							{
+								fillColor : "rgba(39,174,96,0.5)",
+								strokeColor : "rgba(220,220,220,1)",
+								pointColor : "rgba(220,220,220,1)",
+								pointStrokeColor : "#fff",
+								data : [2748,2748,2748,2700,2700,2700,2648]
+							}
+						]
+						
+					}
+			
+				var myLine = new Chart(document.getElementById("canvas1").getContext("2d")).Line(lineChartData);
+				
+				</script>
+				</div>
+			</div>
+			
+	</div>
+
+
+
+
+	
+			<h2 class="h2home">By using Holidaytracker.co.uk, you can:</h2>
+		
+			<div class="usp usp-price usp-margin-top"><p>See how the price changes over time</p></div>
+			<div class="usp usp-notification"><p>Receive notifications by email when the price changes</p></div>
+			
+			<div class="centre">
+
+			<% if user_signed_in? %>
+				<%= link_to "View Your Watchlist", holidays_path, class: "button" %>
+			<% else %>
+				<%= link_to "Start tracking prices for free!", new_user_registration_path, class: "button" %>
+			<% end %>
+
+			</div>
+	
+</div>
+
+
+<%= render partial: 'layouts/footer' %>
