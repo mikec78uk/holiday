@@ -114,11 +114,11 @@ class Holiday < ActiveRecord::Base
 
 				
 				
-				
-				
-				@real_html.css("ul.plist").children.first.search('img').each do |img|
-					self.image_url = img['src'].to_s
-				end
+				self.image_url = @real_html.css('ul.plist > li').children.first.attr('src').to_s
+				# Stopped working when moved to cedar 14 from cedar 10 on heroku
+				#@real_html.css("ul.plist").children.first.search('img').each do |img|
+					#self.image_url = img['src'].to_s
+				#end
 				
 			
 
@@ -147,9 +147,14 @@ class Holiday < ActiveRecord::Base
 				self.company = "firstchoice"
 				self.last_emailed = self.initial_price
 				
-				@real_html.css("ul.plist").children.first.search('img').each do |img|
-					self.image_url = img['src'].to_s
-				end
+				self.image_url = @real_html.css('ul.plist > li').children.first.attr('src').to_s
+				
+				# Stopped working when moved to cedar 14 from cedar 10 on heroku
+				#@real_html.css("ul.plist").children.first.search('img').each do |img|
+				#	self.image_url = img['src'].to_s
+				#end
+				
+
 				# Duration by class name
 				
 				duration = @real_html.css("li.duration").first.child.attr('class')
