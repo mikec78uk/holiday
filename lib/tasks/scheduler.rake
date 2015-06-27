@@ -89,7 +89,7 @@ task reduce_histories: :environment do
 	# Run through each to keep the last 7
 	@histories.each do |x|
 		# Get each one, order by created date, keep the last 7 and delete
-		History.where(Holiday_id: x).order('created_at DESC').offset(7).destroy_all
+		History.where(holiday_id: x).order('created_at DESC').offset(7).destroy_all
 	end
 
 end
