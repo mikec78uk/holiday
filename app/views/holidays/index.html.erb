@@ -107,10 +107,9 @@
 									</div>
 									
 									<div class="now-price">
-									
-									<% @history_prices = History.where(:holiday_id => holiday.id).limit(30) %>  
-					                <% @today = @history_prices.map {|i| i.price }.last.to_i %>
-					                <% @today_time = @history_prices.map {|i| i.created_at }.last.strftime('%H:%M') %>
+										<% @today = History.where(:holiday_id => holiday.id).map {|i| i.price }.last %>
+						                <% @today_time = History.where(:holiday_id => holiday.id).map  {|i| i.created_at }.last.strftime('%H:%M') %>
+					               
 					                
 						                
 						                  
@@ -155,56 +154,6 @@
 
 							
 							
-							<% unless @history_prices.map {|i| i.price }.uniq.length == 1 %>
-							
-								<div class="chart group">
-										<p class="tagline">Price movement in the last <%= pluralize @history_prices.size, "day" %></p>
-								
-						
-											<canvas id="canvas<%= holiday.id %>" height="200" width="280"></canvas>
-										
-								
-									<script>
-								
-										var lineChartData = {
-											labels : [
-											<% @history_prices.each do |x| %>
-												"",
-											<% end %>
-											],
-											datasets : [
-												{
-													<% if @today > holiday.initial_price %>
-						                  				fillColor : "rgba(209,0,15,0.5)",
-							                  		<% end %>
-							                  	
-											  		<% if @today < holiday.initial_price %>
-							                  			fillColor : "rgba(39,174,96,0.5)",
-							                  		<% end %>
-							                  		
-							                  		<% if @today == holiday.initial_price %>
-							                  			fillColor : "rgba(220,220,220,0.5)",
-							                  		<% end %>
-													
-													strokeColor : "rgba(220,220,220,1)",
-													pointColor : "rgba(220,220,220,1)",
-													pointStrokeColor : "#fff",
-													data : [
-													
-													<% @history_prices.each do |x| %>
-														<%=x.price%>,
-													<% end %>
-													]
-												}
-											]
-											
-										}
-								
-									var myLine = new Chart(document.getElementById("canvas<%= holiday.id %>").getContext("2d")).Line(lineChartData);
-									
-									</script>
-									</div>
-								<% end %>	
 							</div>
 							
 					</div>
@@ -237,45 +186,4 @@
 		  </script>
 
 
-			
-			<script>
-			//Equal line heights
-			equalheight = function(container){
-
-				var currentTallest = 0,
-				     currentRowStart = 0,
-				     rowDivs = new Array(),
-				     $el,
-				     topPosition = 0;
-				 $(container).each(function() {
-				
-				   $el = $(this);
-				   $($el).height('auto')
-				   topPostion = $el.position().top;
-				
-				   if (currentRowStart != topPostion) {
-				     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-				       rowDivs[currentDiv].height(currentTallest);
-				     }
-				     rowDivs.length = 0; // empty the array
-				     currentRowStart = topPostion;
-				     currentTallest = $el.height();
-				     rowDivs.push($el);
-				   } else {
-				     rowDivs.push($el);
-				     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
-				  }
-				   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-				     rowDivs[currentDiv].height(currentTallest);
-				   }
-				 });
-				}
-				
-				$(window).load(function() {
-				  equalheight('.holiday');
-				});
-				
-				
-				$(window).resize(function(){
-				  equalheight('.holiday');
-				});</script>
+		
