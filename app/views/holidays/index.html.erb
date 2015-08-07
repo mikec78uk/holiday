@@ -108,7 +108,7 @@
 									
 									<div class="now-price">
 										<% @today = History.where(:holiday_id => holiday.id).order("created_at").map {|i| i.price }.last %>
-						                <% @today_time = History.where(:holiday_id => holiday.id).map  {|i| i.created_at }.last.strftime('%H:%M') %>
+						                <% @today_time = History.where(:holiday_id => holiday.id).order("created_at").map  {|i| i.created_at }.last.strftime('%H:%M') %>
 					               
 					                
 						                
