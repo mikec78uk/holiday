@@ -126,7 +126,7 @@ task email_price_change: :environment do
 
 	@holidays.each do |holiday|
 		# get the last price in the history
-		@last_price = History.where(:holiday_id => holiday.id).map {|i| i.price }.last
+		@last_price = History.where(:holiday_id => holiday.id).order("created_at").map {|i| i.price }.last
 			
 			# ignore the ones where the last price was zero
 			if @last_price != 0
