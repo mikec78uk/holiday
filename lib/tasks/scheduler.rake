@@ -40,30 +40,7 @@ task daily_price: :environment do
 	
 	end
 	
-	## IF last emailed does is not the same updated last last_emaile
-	#For each holiday get the latest price
-#
-	#@all_holidays = Holiday.where(:is_live => true)
-#
-	#@all_holidays.each do |hol|
-#
-	#	#Find the latest price
-	#	@latest_price = History.where(:holiday_id => holiday.id).map {|i| i.price }.last
-#
-	#	
-#
-	#end	
-#
-	#Find last history
-#
-#
-#
-	#if @holiday.last_emailed != @history.
-#
-#
-	##Save
-	#
-	#@holiday.save
+
 
 
 end
@@ -72,7 +49,7 @@ task mark_as_unavailable: :environment do
 	@holidays = Holiday.where(:is_live => true)
 	
 	@holidays.each do |holiday|
-		@history_prices = History.where(:holiday_id => holiday.id)
+		@history_prices = History.where(:holiday_id => holiday.id).order("created_at")
 		
 		if @history_prices.map {|i| i.price }.last(2) == [0,0]
 			# Send email to user if notifications is true
