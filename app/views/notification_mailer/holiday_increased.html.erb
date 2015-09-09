@@ -1,6 +1,6 @@
 <!-- This should not be holiday.initial_price, this should be the last emailed price -->
 
-<p>It looks like the following holiday has increased in price by <strong>£<%=@last_price - @holiday.initial_price %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
+<p>It looks like the following holiday has increased in price by <strong>£<%=@last_price - @holiday.last_emailed %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
 
 <p></p>
 <p><strong>Hotel name:</strong><%=@holiday.hotel_name%> <%= @holiday.location%></p>

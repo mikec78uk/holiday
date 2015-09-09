@@ -1,4 +1,4 @@
-<p>It looks like the price for the following holiday has gone down by <strong>£<%=@holiday.initial_price - @last_price %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
+<p>It looks like the price for the following holiday has gone down by <strong>£<%=@holiday.last_emailed - @last_price %> to <%= number_to_currency(@last_price, :unit => "£", :precision => 0)%></strong>:</p>
 
 <p></p>
 <p><strong>Hotel name:</strong><%=@holiday.hotel_name%> <%= @holiday.location%></p>
