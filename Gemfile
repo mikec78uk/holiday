@@ -73,3 +73,7 @@ gem 'gem_bench', :require => false, :group => :development
 
 # Rack Timeout to cut off long running requests
 gem "rack-timeout"
+
+# Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
