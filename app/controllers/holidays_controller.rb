@@ -25,7 +25,7 @@ class HolidaysController < ApplicationController
 		@holiday.user_id = current_user.id
 		
 		if @holiday.save
-			flash[:success] = "Holiday added to your list"
+			flash[:success] = "Your holiday has been added to your list, we'll notify you if the price changes"
 			redirect_to holidays_path
 
 		else

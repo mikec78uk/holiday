@@ -3,7 +3,7 @@
 <head>
   <title>Your Holiday Watchlist | HolidayTracker.co.uk</title>
   <meta name="description" content="View the latest price movements for package holidays in your Watchlist.">
-  <%= stylesheet_link_tag    "holidays", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag '/favicon.ico' %>
@@ -23,11 +23,32 @@
 </head>
 <body>
 
-<%= yield %>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+  	
+    <div class="navbar-header">
+      <%= link_to "Track Thomson and First Choice package holiday prices", root_path, class: "logo" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+		<% if user_signed_in? %>
+			<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "utility-link" %></li>
+		<% else %>
+			<li><%= link_to "Sign in", new_user_session_path, class: "utility-link" %></li>
+		<% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+  
+</nav>
 
+	<div class="container-fluid">
 
+		<%= yield %>
 
-<%= render 'layouts/analytics' %>
+		<%= render 'layouts/analytics' %>
 
+	</div>
 </body>
 </html>

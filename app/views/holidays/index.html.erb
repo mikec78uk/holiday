@@ -53,8 +53,9 @@
 			</div>
 		
 				<% if flash[:success].present? %>
-	          <div data-alert class="flash success" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
-	            <%= flash[:success] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
+	          <div data-alert class="alert alert-success alert-dismissible" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
+	          	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	            	<strong>Success!</strong> <%= flash[:success] %> 
 	          </div>
       	<% end %>
 

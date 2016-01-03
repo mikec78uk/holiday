@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
 
+	layout 'holiday'
+
 	def home
 		if user_signed_in?
 			redirect_to holidays_path
