@@ -34,7 +34,14 @@
                         <h3>... and we'll email you when the price changes</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
-                            <li><%= link_to "Start tracking prices for free!", new_user_session_path, class: "btn btn-default btn-lg network-name" %></li>
+                            <li>
+                                <%= link_to "Start tracking prices for free!", new_user_registration_path, class: "btn btn-default btn-lg network-name" %>
+                            </li>
+
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -136,7 +143,7 @@
 
             <div class="row">
                 <div class="col-lg-12 center-text">
-                    <h2 class="section-heading">Clearly see when the price moves up or down<br><small>...and we'll email you to let you know when the price changes</small></h2>
+                    <h2 class="section-heading">Clearly see when the price moves up or down<br><small>...and we'll email you when the price changes</small></h2>
                 </div>
                 
 
@@ -201,7 +208,7 @@
                 </div>
                 <div class="col-lg-4">
                     <ul class="list-inline banner-social-buttons">
-                        <li><%= link_to "create your watchlist", new_user_session_path, class: "btn btn-default btn-lg network-name" %></li>
+                        <li><%= link_to "create your watchlist", new_user_registration_path, class: "btn btn-default btn-lg network-name" %></li>
                     </ul>
                 </div>
             </div>
