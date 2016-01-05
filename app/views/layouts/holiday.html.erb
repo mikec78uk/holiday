@@ -23,32 +23,68 @@
 </head>
 <body>
 
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-  	
-    <div class="navbar-header">
-      <%= link_to "Track Thomson and First Choice package holiday prices", root_path, class: "logo" %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-		<% if user_signed_in? %>
-			<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "utility-link" %></li>
-		<% else %>
-			<li><%= link_to "Sign in", new_user_session_path, class: "utility-link" %></li>
-		<% end %>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-  
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "HolidayTracker", root_path, class: "navbar-brand topnav" %>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+                        <% if user_signed_in? %>
+    						<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    					<% else %>
+    						<%= link_to "Sign in", new_user_session_path %>
+    					<% end %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-	<div class="container-fluid">
+
+
+
+
 
 		<%= yield %>
 
 		<%= render 'layouts/analytics' %>
 
-	</div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li><%= link_to "Home", root_path %></li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><%= link_to "Contact us", new_contact_path %></li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><%= link_to "Terms of service", terms_page_path %></li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><%= link_to "Privacy policy", privacy_page_path %></li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><%= link_to "Cookie policy", cookie_page_path %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

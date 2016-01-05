@@ -17,17 +17,19 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: sans-serif;
+    font-weight: 400;
 }
+
+
 
 .topnav {
     font-size: 14px; 
 }
 
 .lead {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .intro-header {
@@ -35,7 +37,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: asset-data-url("hero-bg.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -90,6 +92,8 @@ h6 {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 2px;
+    /* Added by me for padding */
+    padding: 16px;
 }
 
 .content-section-a {
@@ -116,7 +120,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(/assets/banner-bg.jpg) no-repeat center center;
+    background: asset-data-url("hero-bg.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -133,6 +137,10 @@ h6 {
 .banner-social-buttons {
     float: right;
     margin-top: 0;
+}
+
+.center-text {
+	text-align: center;
 }
 
 @media(max-width:1199px) {
@@ -167,4 +175,177 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+/* For instructional info on Homepage*/
+
+.img-center {
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+/* Added for inline mouseover */
+
+#step-1 #step-1-static, 
+#step-1:hover #step-1-animated,
+#step-2 #step-2-static, 
+#step-2:hover #step-2-animated,
+#step-3 #step-3-static, 
+#step-3:hover #step-3-animated, {
+    display: inline;
+}
+
+#step-1 #step-1-animated, 
+#step-1:hover #step-1-static,
+#step-2 #step-2-animated, 
+#step-2:hover #step-2-static,
+#step-3 #step-3-animated, 
+#step-3:hover #step-3-static {
+    display: none;
+}
+
+/* Item Listing */
+
+.col-item
+{
+    border: 1px solid #EEE;
+    /*border-radius: 5px;*/
+    background: #FFF;
+}
+
+.firstchoice-company {background-color: #119ca6;
+    background-image: url(/assets/logo-first-choice.png);
+    background-repeat: no-repeat;
+    background-position: 10px 7px;
+    height: 40px;
+    background-size: auto 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.thomson-company {background-color: #5f99c5;
+    background-image: url(/assets/thomson.png);
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    height: 40px;
+    background-size: auto 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.close-btn-20 {
+  display: block;
+  position: absolute;                 
+  top: 9px;
+  right: 30px;
+  
+  height: 0;
+  width: 20px;
+  padding: 20px 0 0 0;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.close-btn-20:before {
+  content: "\D7";
+  display: block;
+  text-align: center;
+  width: 20px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Consolas, Verdana, Tahoma, Calibri, Helvetica, Menlo, "Droid Sans", sans-serif;
+}
+
+p.hotel-name {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+.tagline {
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+p {font-family: sans-serif; font-weight: normal;}
+
+
+.prices {margin: 20px 0 30px 0;}
+
+.original-price {
+    float: left;
+    display: inline-table;
+    text-align: center;
+}
+
+.now-price {
+    float: right;
+    display: inline-table;
+    text-align: center;
+}
+
+.price {font-size: 16px;}
+
+.price span {
+    font-size: 14px;
+}
+
+.down {color: #27ae60;}
+
+.up {color: #d1000f;}
+.no-change {color: #000000;}
+
+                p.specifics {
+                    padding-bottom: 20px;
+                    padding-left: 20px;
+                    border-bottom: 1px solid #EEEEEE;
+                }
+                
+                .margin-bottom {
+                    margin-bottom: 10px;
+                }
+
+                .group:after {
+                content: "."; 
+                display: block; 
+                height: 0; 
+                clear: both; 
+                visibility: hidden;
+                }  
+
+                .contents {
+                    padding: 10px;
+                }
+
+                .photo img {
+                    padding-bottom: 20px;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .btn-margin {
+                    margin: 20px 0px 10px 0px;
+                }
+
+                .btn-lg, .btn-group-lg > .btn {
+                    font-size: 14px;
+                }
+
+
+                @media(min-width:768px) and (max-width:991px){
+                    p.specifics {
+                        padding-left: 0px;
+                    }
 }

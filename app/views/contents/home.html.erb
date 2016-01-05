@@ -30,13 +30,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Track the price of Thomson and First Choice Package Holidays</h1>
-                        <h3>We'll notify you whenever the price changes</h3>
+                        <h1>Track the price of <br>Thomson &amp; First Choice Holidays</h1>
+                        <h3>... and we'll email you when the price changes</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Start tracking prices</span></a>
-                            </li>
+                            <li><%= link_to "Start tracking prices for free!", new_user_session_path, class: "btn btn-default btn-lg network-name" %></li>
                         </ul>
                     </div>
                 </div>
@@ -50,184 +48,176 @@
 
 
 
+    <!-- Page Content -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 center-text">
+                    <h2 class="section-heading">Did you know the price of package holidays can change on a daily basis?</h2>
+                    <p class="lead">HolidayTracker.co.uk lets you track the price of package holidays from <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.thomson.co.uk/" target="_blank" title="Thomson.co.uk (new window)">Thomson.co.uk</a> and <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a>.</p> 
+                    <p class="lead">We monitor prices on a daily basis and email you when the price changes so you can choose the best time to buy.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+    <!-- Instructions Row -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 center-text">
+                <h2 class="section-heading">Tracking the price of your holiday is simple</h2>
+            </div>
+            <div class="col-lg-4 col-sm-4 text-center">
+
+                <div id="step-1" class="static">
+                    <%= image_tag("step-1-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-1-static")%>
+
+                    <%= image_tag("step1-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-1-animated")%>
+                </div>
+
+
+                <h3>
+                    <small>Step 1</small>
+                </h3>
+                <p>Search for your ideal holiday on <br><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.thomson.co.uk/" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></p>
+            </div>
+            <div class="col-lg-4 col-sm-4 text-center">
+
+
+<div id="step-2" class="static">
+
+                <%= image_tag("step-2-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-2-static")%>
+
+                <%= image_tag("step2-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-2-animated")%>
+
+</div>                
+                <h3>
+                    <small>Step 2</small>
+                </h3>
+                <p>Select "More Details" on<br>the holiday you want to monitor</p>
+            </div>
+            <div class="col-lg-4 col-sm-4 text-center">
+
+<div id="step-3" class="static">
+                <%= image_tag("step-3-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-3-static")%>
+
+                <%= image_tag("step3-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-3-animated")%>
+</div>
+
+
+                <h3>
+                    <small>Step 3</small>
+                </h3>
+                <p>Copy the <strong>full web address</strong> and add<br>it to your <i>Holidaytracker.co.uk Watchlist</i></p>
+            </div>
+        </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+    <!-- Example Content Row -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 center-text">
+                    <h2 class="section-heading">Clearly see when the price moves up or down<br><small>...and we'll email you to let you know when the price changes</small></h2>
+                </div>
+                
+
+
+
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <div class="col-item">
+
+                                <div class="thomson-company">
+                                    <span class="close-btn-20">Close</span>
+                                </div>
+                                <div class="contents">
+                                    <p class="hotel-name">Villa Marchena</p>
+                                    <p class="tagline">in Pollensa, Majorca</p>
+
+
+
+
+                                    <div class="photo">
+                                        <img src="/assets/img.png" class="img-responsive" alt="a" />
+                                    </div>
+
+                                    <p class="tagline margin-bottom">Departing:</p>
+                            
+                                    <p class="specifics">Thu 25 Jun <%=next_year%> <span class="tagline">from</span> Birmingham </p>
+                                    
+                                    <p class="tagline margin-bottom margin-top">Duration:</p>
+                                    <p class="specifics">7 nights (2 adults, 1 child)</p>
+                                                
+                                     <p class="tagline margin-bottom margin-top">Price when added 7 days ago:</p>
+                                    <p class="specifics">£2,748</p>
+
+                                    <p class="tagline margin-bottom margin-top">Price today:</p>
+                                    <p class="specifics">£2,648 <span class="down">(&#8595; £100 less)</span></p>                             
+                                    <button type="button" class="btn btn-success btn-lg btn-block btn-margin">View on Thomson.co.uk</button>
+
+                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
 
 
 
 
 
+	<!-- Bottom Banner -->
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2>Start tracking YOUR holiday now:</h2>
+                </div>
+                <div class="col-lg-4">
+                    <ul class="list-inline banner-social-buttons">
+                        <li><%= link_to "create your watchlist", new_user_session_path, class: "btn btn-default btn-lg network-name" %></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
 
 
 
+        </div>
+        <!-- /.container -->
+
+    </div>
 
 
-
-
-
-
-	<div class="container" style="width:100%;">
-	    <div class="jumbotron">
-	        <h1>Did you know...</h1>
-	        <p>Breathtaking Nature Stock Photos for FREE!</p>
-	        <p><a href="#" class="btn btn-success btn-lg">Click Here »</a></p>
-	    </div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-		<div class="homewrapper container">
-
-				<div class="holidayhome">
-			
-					<div class="thomson-company">
-						<span class="close-btn-20">Close</span>
-					</div>
-					
-					<div class="contents">	
-						<p class="hotel-name">Villa Marchena</p>
-						<p class="tagline">in Pollensa, Majorca</p>
-						
-						<img src="/assets/img.png" class="main">
-						
-						
-						<p class="tagline margin-bottom">Departing:</p>
-						
-						<p class="specifics">Thu 25 Jun <%=next_year%> <span class="tagline">from</span> Birmingham </p>
-						
-						<p class="tagline margin-bottom margin-top">Duration:</p>
-						<p class="specifics">7 nights (2 adults, 1 child)</p>
-									
-						
-						<div class="prices group">
-							<div class="original-price">
-								<p class="price">£2,748</p>
-								<p class="tagline margin-top">Price when added<br>around 7 days ago</p>
-							</div>
-							
-							<div class="now-price">
-								<p class="price">£2,648 <span class="down">(&#8595; £100)</span></p>
-								<p class="tagline margin-top">Price today</p>
-							</div>
-							
-						</div>
-						
-						
-						
-						
-						
-						<div class="chart group">
-								<p class="tagline">Price movement in the last 7 days</p>
-						
-				
-									<canvas id="canvas1" height="200" width="280"></canvas>
-								
-						
-							<script>
-						
-								var lineChartData = {
-									labels : ["","","","","","",""],
-									datasets : [
-										{
-											fillColor : "rgba(39,174,96,0.5)",
-											strokeColor : "rgba(220,220,220,1)",
-											pointColor : "rgba(220,220,220,1)",
-											pointStrokeColor : "#fff",
-											data : [2748,2748,2748,2700,2700,2700,2648]
-										}
-									]
-									
-								}
-						
-							var myLine = new Chart(document.getElementById("canvas1").getContext("2d")).Line(lineChartData);
-							
-							</script>
-							</div>
-						</div>
-						
-				</div>
-
-
-
-
-	<div class="jumbotron">
-	  <h1>Did you know the price of package holidays can change on a daily basis?</h1>
-	  <p>Track package holiday prices from <a href="http://www.thomson.co.uk/" target="_blank" title="Thomson.co.uk (new window)" class="usplink">Thomson.co.uk</a> and <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)" class="usplink">FirstChoice.co.uk</p>
-	  <p><a class="btn btn-primary btn-lg" href="#" role="button">Start tracking holidays now</a></p>
-	</div>
-
-	<h2>What you see</h2>
-
-
-
-				<div class='list_of_stuff'>
-					<h1 class="h1home">Did you know the price of package holidays can change on a daily basis?</h1>
-
-							<ul class="homeusp">
-								<li>Track package holiday prices from <a href="http://www.thomson.co.uk/" target="_blank" title="Thomson.co.uk (new window)" class="usplink">Thomson.co.uk</a> and <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)" class="usplink">FirstChoice.co.uk</a></li>
-								<li>Monitor price changes so you can choose the best time to buy</li>
-								<li>Get notified by email when the price changes</li>
-							</ul>
-
-
-					
-						<% if user_signed_in? %>
-							<%= link_to "View Your Watchlist", holidays_path, class: "button" %>
-						<% else %>
-							<%= link_to "Start tracking holidays for FREE!", new_user_registration_path, class: "button" %>
-						<% end %>
-					
-
-					<!-- AddThis Button BEGIN -->
-						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-							<p class="share">Let others know about Holidaytracker.co.uk:</p>
-							<a class="addthis_button_facebook"></a>
-							<a class="addthis_button_twitter"></a>
-							<a class="addthis_button_pinterest_share"></a>
-							<a class="addthis_button_tumblr"></a>
-							<a class="addthis_button_google_plusone_share"></a>
-						</div>
-							<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=mikec78uk"></script>
-					<!-- AddThis Button END -->
-				</div>
-			
-		</div>
-
-
-
-
-	<div id="instructions" class="instructions">
-			<div class="wrapper">
-				<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></h2>
-					
-			<p class="instruction-step step1"><span class="step-no">Step 1</span>Search for your ideal holiday</p>
-			
-			
-			<p class="instruction-step step2"><span class="step-no">Step 2</span><span class="indent">Select "more details" on<br>the holiday you want to monitor</span></p>	
-			
-			
-			<p class="instruction-step step3"><span class="step-no">Step 3</span>Copy the web address in it's entirety and add it to your <i>Holidaytracker.co.uk Watchlist</i></p>
-			
-			
-			
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-	<%= render partial: 'layouts/footer' %>
-
-
+    </script>
