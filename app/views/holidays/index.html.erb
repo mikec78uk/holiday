@@ -1,167 +1,214 @@
-
+<% @page_title = "Your Watchlist" %>
 	  
 
 
-	<%= render partial: 'layouts/watchlistHeader' %>
-	  
-	  <header>
-		<div class="nav">
-			<div id="searchContainer">
-
-
-
-				
-				 <div class="form-wrapper cf">
-		  <%= render "form" %>
-				 	
-					 	<div class="instruction-info">
-					 	<% unless @holidays.blank? %>
-							<a href="#" id="view-instructions" class="instruction-link">What do I need to do?</a>
-						<% end %>
-						</div>
-					
-				 </div>
-	    	</div>
-		</div>
-	</header>
 	
-	<div id="instructions" class="instructions">
-		<div class="wrapper">
-			<h2 class="instruction-header">To monitor prices, simply head to <a href="http://www.thomson.co.uk" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)" class="usplink">FirstChoice.co.uk</a></h2>
-			<p class="hover-hint-text"><i>Hover over the images for more information</i></p>
+<div class="content-section-a">
+
+	<!-- Insert URL -->
+
+
+<div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+            	<h3>Which holiday would you like to track?</h3>
+            </div>
+        </div>
+</div>
+
+
+
+
+<div class="container">
+
+        <div class="row">
+
+			 <div class="col-lg-12">
+
+					<!--FLash Messages -->
+					
+
+
+
+
+				<% if flash[:success].present? %>
+
+					<div class="alert alert-success alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Success! </strong><%= flash[:success] %> 
+					</div>
+		      	<% end %>
+
+		      	<% if flash[:error].present? %>
+			          
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Oh dear! </strong><%= flash[:error] %> 
+					</div>
+
+		      	<% end %>
+		      
+		      	<% if flash[:message].present? %>
+
+  					<div class="alert alert-warning alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Whoops! </strong><%= flash[:message].first %>
+					</div>
+		      	<% end %>
+
+<!-- END: Flash Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+			 		<!-- FORM -->
+					<%= simple_form_for Holiday.new do |form| %>
+
+						
+						 <%= form.input :url, as: :string, maxlength: false, placeholder: "Paste the full web address of your Thomson / Firstchoice holiday here...", label: false %>
+						 <%= form.input :notifications, as: :boolean, checked_value: true, unchecked_value: false, input_html: {class: "notifications"}, label: 'Email me when the price changes'  %>
+						 <%= form.button :submit, "Track holiday", class: "btn btn-primary", data: { disable_with: "Adding ..." } %>
+			
+					<% end %>
+
+			</div>  
+		 </div> 
+</div>
+
+  
+
+
+
+<div class="container instructions-margin">
+        <div class="row">
+        	<div class="col-lg-12">
+				 	<% unless @holidays.blank? %>
+				 		<!-- START: Instructional hint text -->
+				 		<div class="instruction-info">
+							<a href="#" id="view-instructions" class="instruction-link">How do I track a holiday?</a>
+						</div>
+					<% end %>
+			</div>
 				
-		<p class="instruction-step step1"><span class="step-no">Step 1</span>Search for your ideal holiday</p>
-		
-		
-		<p class="instruction-step step2"><span class="step-no">Step 2</span><span class="indent">Select "more details" on<br>the holiday you want to monitor</span></p>	
-		
-		
-		<p class="instruction-step step3"><span class="step-no">Step 3</span>Copy the web address in it's entirety and<br>paste into the box above</p>
-		
-		
-		
 		</div>
-	</div>
+</div>
+
+
+
+
+
+				<!-- Instructions Row -->
+
+		<div class="fluid-container content-section-a" id="instructions">
+			<div class="row">
+
+			        <%= render 'layouts/instructions' %>
+
+		    </div>
+	    </div>
+			    <!-- END: Instructional Hint text -->
+
+
+</div>			    
+
 
 
 <% unless @holidays.blank? %>
-		<div class="wrapper group">
+    <div class="container">
+
+        <div class="row">
 		
-			<div class="dashboard-heading group">
-				<h1 class="dashboard">You are tracking <%= pluralize @holidays.size, "holiday" %></h1>
+			<div class="col-lg-12 extra-bm">
+				<h3 class="center-text">Your Holiday Watchlist<br><small>Currently tracking <%= pluralize @holidays.size, "holiday" %></small></h3>
 				<!--<p class="remove-all"><a href="">Remove all holidays</a></p>-->
 			</div>
 		
-				<% if flash[:success].present? %>
-	          <div data-alert class="alert alert-success alert-dismissible" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Holiday Added']);”>
-	          	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	            	<strong>Success!</strong> <%= flash[:success] %> 
-	          </div>
-      	<% end %>
-
-      	<% if flash[:error].present? %>
-	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);”>
-	            <%= flash[:error] %> <span class="close-btn-20" title="Close" id="flash-hide">Close</span>
-	          </div>
-      	<% end %>
-      
-      	<% if flash[:message].present? %>
-	          <div data-alert class="flash" id="flash-message-display" onload=”_gaq.push(['_trackEvent', 'Watchlist', 'Invalid URL']);>
-
-			      <li><%= flash[:message].first %>  <span class="close-btn-20" title="Close" id="flash-hide">Close</span></li>
-
-	          </div>
-      	<% end %>
+				
 		
 		    <% @holidays.each do |holiday| %>
-		
-		
-				<div class="holiday group">
 				
-					<% if holiday.company == "thomson" %>
-							<div class="thomson-company">
-					<% else %>
-							<div class="firstchoice-company">
-					<% end %>
-						<%= link_to "Close", holiday_path(holiday), method: :delete, confirm: "Are you sure you want to remove this holiday from your watchlist?", class: "close-btn-20" %>
-					</div>
-				
-						<div class="contents">	
-							<div class="hotel-name"><%= holiday.hotel_name %></div>
-							<p class="tagline"><%= holiday.location %></p>
-							
-							<!-- NEEDS TO CHANGE TO ACTUAL IMAGE -->
-							<img src="<%=holiday.image_url%>" class="main">
-							
-							
-							<p class="tagline margin-bottom">Departing:</p>
-							<p class="specifics"><%= holiday.dept_date %> <span class="tagline">from</span> <%= holiday.flights %> </p>
-							
-							<p class="tagline margin-bottom margin-top">Duration:</p>
-							<p class="specifics"><%= holiday.duration %> (<%=holiday.party_size %>)</p>
-										
-							
-								<div class="prices group">
-									<div class="original-price">
-										<p class="price"><%= number_to_currency(holiday.initial_price, :unit => "£", :precision => 0) %></p>
-										<p class="tagline margin-top">Price when added<br><%= time_ago_in_words holiday.created_at %> ago</p>
-									</div>
-									
-									<div class="now-price">
-										<% @today = History.where(:holiday_id => holiday.id).order("created_at").map {|i| i.price }.last %>
-						                <% @today_time = History.where(:holiday_id => holiday.id).order("created_at").map  {|i| i.created_at }.last.strftime('%H:%M') %>
-					               
-					                
-						                
-						                  
-						                  <% if @today  == 0 %>
-							                  	<p class="price"><i>Unavailable</i></p>
-											  	<p class="tagline margin-top">This may have sold out<br>or the site may be down</p>
+				<div class="col-sm-4">
+                    <div class="col-item">
+
+		                        <% if holiday.company == "thomson" %>
+									<div class="thomson-company">
+								<% else %>
+										<div class="firstchoice-company">
+								<% end %>
+										<%= link_to "Close", holiday_path(holiday), method: :delete, confirm: "Are you sure you want to remove this holiday from your watchlist?", class: "close-btn-20" %>
+								</div>
+                                
+                                <div class="contents">
+                                    <p class="hotel-name"><%= holiday.hotel_name %></p>
+                                    <p class="tagline"><%= holiday.location %></p>
+
+                                    <div class="photo">
+                                        <img src="<%=holiday.image_url%>" class="img-responsive" alt="a" />
+                                    </div>
+
+                                    <p class="tagline margin-bottom">Departing:</p>
+                            
+                                    <p class="specifics"><%= holiday.dept_date %> <span class="tagline">from</span> <%= holiday.flights %> </p>
+                                    
+                                    <p class="tagline margin-bottom margin-top">Duration:</p>
+                                    <p class="specifics"><%= holiday.duration %> (<%=holiday.party_size %>)</p>
+                                                
+                                    <p class="tagline margin-bottom margin-top">Price when added <%= time_ago_in_words holiday.created_at %>:</p>
+                                    <p class="specifics"><%= number_to_currency(holiday.initial_price, :unit => "£", :precision => 0) %></p>
+
+                                    <% @today = History.where(:holiday_id => holiday.id).order("created_at").map {|i| i.price }.last %>
+						            <% @today_time = History.where(:holiday_id => holiday.id).order("created_at").map  {|i| i.created_at }.last.strftime('%H:%M') %>
+                                    
+                                    <p class="tagline margin-bottom margin-top">Price at <%=@today_time%> today:</p>
+
+										<% if @today  == 0 %>
+							                  	<p class="specifics"><i>Currently Unavailable</i><br><span class="tagline">This may have sold out or the site may be down</span></p>  
 						                  	
 						                  <% else %>
-						                  	<p class="price"><%= number_to_currency(@today, :unit => "£", :precision => 0) %> 
+						                  	<p class="specifics"><%= number_to_currency(@today, :unit => "£", :precision => 0) %> 
 						                  	
 						                  		<% if @today > holiday.initial_price %>
-						                  			<span class="up">(&#8593; £<%=@today - holiday.initial_price %>)</span></p>
-						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
-						                  		<% end %>
-						                  	
-										  		<% if @today < holiday.initial_price %>
-						                  			<span class="down">(&#8595; £<%= holiday.initial_price - @today %>)</span></p>
-						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
-						                  		<% end %>
-						                  		
-						                  		<% if @today == holiday.initial_price %>
-						                  			<p class="tagline margin-top">Price today<br>at <%=@today_time%></p>
+						                  			<span class="up">(&#8593; £<%=@today - holiday.initial_price %> more)</span></p>
 						                  			
 						                  		<% end %>
 						                  	
-						                  	
-						                  <% end %>
-						              </div>  
-									
-								
-								</div>
-							
+										  		<% if @today < holiday.initial_price %>
+						                  			<span class="down">(&#8595; £<%= holiday.initial_price - @today %> less)</span></p>
+						                  		<% end %>
 
-							<% if holiday.company == "thomson" %>
-								<div class="centre"><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
-							<% else %>
-								<div class="centre"><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/sid/holiday-tracker/<%= holiday.url %>" target="_blank" class="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on <%= holiday.company %></a></div>
-							<% end %>
+										  		<% if @today == holiday.initial_price %>
+						                  			</p>
+						                  		<% end %>
+
+						                <% end %>
 
 
 
+										<% if holiday.company == "thomson" %>
+											<a href="http://www.anrdoezrs.net/links/7510289/type/dlg/<%= holiday.url %>" target="_blank" class="btn btn-success btn-lg btn-block btn-margin" role="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on Thomson.co.uk</a>
 
-							
-							
-							</div>
-							
-					</div>
+										<% else %>
+											<a href="http://www.anrdoezrs.net/links/7510289/type/dlg/sid/holiday-tracker/<%= holiday.url %>" target="_blank" class="btn btn-success btn-lg btn-block btn-margin" role="button" onClick=”_gaq.push(['_trackEvent', 'External Link', 'Watchlist', '<%=holiday.company%> Link']);”>View on FirstChoice.co.uk</a>
+
+										<% end %>
+
+                        </div>
+                    </div>
+                </div>
 			<%end%>
-			</div>
+		</div>		
+	</div>
 <%end%>
-	  <%= render partial: 'layouts/footer' %>
+	  
 	  <% unless @holidays.blank? %>	
 	     <script>
 		   $(document).ready(function(){

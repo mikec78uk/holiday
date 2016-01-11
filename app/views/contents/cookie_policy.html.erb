@@ -1,18 +1,21 @@
 <% @page_title = 'Cookie Policy' %>
 <% @meta_description = "Cookie policy for Holidaytracker.co.uk" %>
-<%= render partial: 'layouts/watchlistHeader' %>
-<div class="top-padding-legal"></div>
 
+<div class="container">
+	<div class="row nav-margin">
+	    <div class="col-lg-12">
+			<ol class="breadcrumb ">
+			  <li><%= link_to "Home", root_path, class: "orange" %></li>
+			  <li>Cookie Policyy</li>
+			</ol>
+		</div>
+	</div>	
+</div>
 
+<div class="container legal">
 
-	<div class = "wrapper">
-			
-	<div class="breadcrumb">
-		<strong>You are in:</strong>
-		<%= link_to "Home", root_path, class: "orange" %> &raquo 
-		Cookie policy
-		
-	</div>
+    <div class="row">
+        <div class="col-lg-12">
 			
 	<h1 class="legal">Cookie Policy</h1>
 	<p class="legal">Holidaytracker.co.uk, like every other website, uses cookies. By using our website and agreeing to this policy, you consent to our use of cookies in accordance with the terms of this policy.</p>
@@ -102,4 +105,7 @@
 	<p class="legal extra-margin"><i>Last updated: April 2014</i></p>
 </div>
 
-<%= render partial: 'layouts/footer' %>
+
+    	</div>
+	</div>
+</div>

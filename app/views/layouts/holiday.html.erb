@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your Holiday Watchlist | HolidayTracker.co.uk</title>
-  <meta name="description" content="View the latest price movements for package holidays in your Watchlist.">
+<title><%=@page_title%> | HolidayTracker.co.uk</title>
+  <meta name="description" content="<%= @meta_description %>">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%= link_to "HolidayTracker", root_path, class: "navbar-brand topnav" %>
+                <%= link_to "Welcome to HolidayTracker", root_path, class: "navbar-brand topnav" %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

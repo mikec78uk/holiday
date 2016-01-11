@@ -37,14 +37,19 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: asset-data-url("hero-bg.jpg") no-repeat center center;
-    background-size: cover;
+    background: asset-data-url("main-hero-bg.jpg") no-repeat center center;
+    /*background-size: cover;*/
+    height: 60%;
+}
+
+.nav-margin {
+    padding-top: 50px;
 }
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 7.5%;
+    /*padding-bottom: 20%;*/
 }
 
 .intro-message > h1 {
@@ -120,7 +125,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: asset-data-url("hero-bg.jpg") no-repeat center center;
+    background: asset-data-url("main-hero-bg.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -177,6 +182,23 @@ p.copyright {
     margin: 15px 0 0;
 }
 
+
+/* Breadcrum update */
+.breadcrumb {
+    background-color: white;
+    font-size: 12px;
+    padding-top: 20px;
+    padding-left: 0px;
+}
+
+/* for gap at bottom of content pages */
+
+.legal {
+    margin-bottom: 30px;
+}
+
+
+
 /* For instructional info on Homepage*/
 
 .img-center {
@@ -211,6 +233,11 @@ p.copyright {
     border: 1px solid #EEE;
     /*border-radius: 5px;*/
     background: #FFF;
+    margin-bottom: 30px;
+}
+
+.extra-bm {
+    margin-bottom: 20px;
 }
 
 .firstchoice-company {background-color: #119ca6;
@@ -343,6 +370,33 @@ p {font-family: sans-serif; font-weight: normal;}
                     font-size: 14px;
                 }
 
+                .instructions-margin {
+                    margin-top: 20px;
+                }
+
+
+                .full-height {
+                    height: 100%;
+                }
+
+.line-space {
+    display: block;
+}
+
+.form-inputs {
+    margin-top: 30px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+.help-block {
+    font-size: smaller;
+}
+
+.vertical-align {
+
+}
 
                 @media(min-width:768px) and (max-width:991px){
                     p.specifics {

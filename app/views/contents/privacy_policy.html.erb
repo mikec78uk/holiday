@@ -1,19 +1,21 @@
 <% @page_title = 'Privacy Policy' %>
 <% @meta_description = "Privacy policy for Holidaytracker.co.uk" %>
 
-<%= render partial: 'layouts/watchlistHeader' %>
-<div class="top-padding-legal"></div>
+<div class="container">
+	<div class="row nav-margin">
+	    <div class="col-lg-12">
+			<ol class="breadcrumb ">
+			  <li><%= link_to "Home", root_path, class: "orange" %></li>
+			  <li>Privacy Policy</li>
+			</ol>
+		</div>
+	</div>	
+</div>
 
+<div class="container legal">
 
-
-	<div class = "wrapper">
-			
-	<div class="breadcrumb">
-		<strong>You are in:</strong>
-		<%= link_to "Home", root_path, class: "orange" %> &raquo 
-		Privacy Policy
-		
-	</div>
+    <div class="row">
+        <div class="col-lg-12">
 	
 	<h1 class="legal">Privacy Policy</h1>
 	
@@ -68,6 +70,6 @@
 
 <p class="legal"><i>Last updated: April 2014</i></p>
 
-    </div>
-    
-    <%= render partial: 'layouts/footer' %>
+    	</div>
+	</div>
+</div>

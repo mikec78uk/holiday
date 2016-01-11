@@ -1,39 +1,56 @@
+<% @page_title = 'Change your password' %>
+<% @meta_description = "Change your password so you can view prices changes for holidays in your watchlist" %>
+
 <%= render partial: 'layouts/watchlistHeader' %>
-<div class="top-padding"></div>
-<div class="wrapper">
-	<div class="registration-form">
-	
-	<h2 class="devise">Change your password</h2>
-		
-		<% if flash[:alert].present? %>
-          <div data-alert class="home-flash">
-            <%= flash[:alert] %>
-          </div>
-		<% end %>
-		<% if flash[:notice].present? %>
-          <div data-alert class="home-flash">
-            <%= flash[:notice] %>
-          </div>
-		<% end %>
-		
-		<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-		  <%= f.error_notification %>
-		
-		  <%= f.input :reset_password_token, as: :hidden %>
-		  <%= f.full_error :reset_password_token %>
-		
-		  <div class="form-inputs">
-		    <%= f.input :password, label: "New password", required: true, autofocus: true %>
-		    <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
-		  </div>
-		
-		  <div class="form-actions">
-		    <%= f.button :submit, "Change my password", class: "devise" %>
-		  </div>
-		<% end %>
-		
-		<%= render "devise/shared/links" %>
-	</div>
+
+
+
+<!-- START -->
+ <div class="content-section-b full-height">
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+
+                <h3>Change your password</h3>
+
+                <% if flash[:alert].present? %>
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <%= flash[:alert] %> 
+                  </div>
+                <% end %>
+                
+                <% if flash[:notice].present? %>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <%= flash[:notice] %>
+                  </div>
+                <% end %>
+        
+              <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+				  <%= f.error_notification %>
+				
+				  <%= f.input :reset_password_token, as: :hidden %>
+				  <%= f.full_error :reset_password_token %>
+                
+
+                <div class="form-inputs">
+                  	<%= f.input :password, label: "New password", required: true, autofocus: true %>
+		    		<%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+                </div>
+            
+                <div class="form-actions">
+                  <%= f.button :submit, "Change my password", class: "devise" %>
+                </div>
+
+              <% end %>
+              
+              <div class="margin-top">
+                <%= render "devise/shared/links" %>
+              </div>
+                
+              </div>
+            </div>
+        </div>
 </div>
-<div class="top-padding-footer"></div>
-<%= render partial: 'layouts/footer' %>

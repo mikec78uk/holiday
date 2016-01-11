@@ -7,23 +7,26 @@
 
 	<%= render partial: 'layouts/watchlistHeader' %>
 		
-	<% if flash[:alert].present? %>
-	          <div data-alert class="home-flash">
-	            <%= flash[:alert] %>
-	          </div>
-			<% end %>
-			<% if flash[:notice].present? %>
-	          <div data-alert class="home-flash">
-	            <%= flash[:notice] %>
-	          </div>
-	<% end %>
+
+    <% if flash[:alert].present? %>
+              <div data-alert class="home-flash">
+                <%= flash[:alert] %>
+              </div>
+            <% end %>
+            <% if flash[:notice].present? %>
+              <div data-alert class="home-flash">
+                <%= flash[:notice] %>
+              </div>
+    <% end %>
 
 
 
-
+ 
 
     <!-- Header -->
     <a name="about"></a>
+
+
     <div class="intro-header">
         <div class="container">
 
@@ -79,61 +82,12 @@
 
     <div class="content-section-b">
 
-        <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 center-text">
-                <h2 class="section-heading">Tracking the price of your holiday is simple</h2>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center">
-
-                <div id="step-1" class="static">
-                    <%= image_tag("step-1-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-1-static")%>
-
-                    <%= image_tag("step1-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-1-animated")%>
-                </div>
-
-
-                <h3>
-                    <small>Step 1</small>
-                </h3>
-                <p>Search for your ideal holiday on <br><a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.thomson.co.uk/" target="_blank" title="Thomon.co.uk (new window)">Thomson.co.uk</a> or <a href="http://www.anrdoezrs.net/links/7510289/type/dlg/http://www.firstchoice.co.uk/" target="_blank" title="Firstchoice.co.uk (new window)">FirstChoice.co.uk</a></p>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center">
-
-
-<div id="step-2" class="static">
-
-                <%= image_tag("step-2-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-2-static")%>
-
-                <%= image_tag("step2-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-2-animated")%>
-
-</div>                
-                <h3>
-                    <small>Step 2</small>
-                </h3>
-                <p>Select "More Details" on<br>the holiday you want to monitor</p>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center">
-
-<div id="step-3" class="static">
-                <%= image_tag("step-3-1-placeholder.png", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-3-static")%>
-
-                <%= image_tag("step3-1.gif", :alt => "", :class => "img-circle img-responsive img-center", :id => "step-3-animated")%>
-</div>
-
-
-                <h3>
-                    <small>Step 3</small>
-                </h3>
-                <p>Copy the <strong>full web address</strong> and add<br>it to your <i>Holidaytracker.co.uk Watchlist</i></p>
-            </div>
-        </div>
-
-        </div>
-        <!-- /.container -->
+        <%= render 'layouts/instructions' %>
 
     </div>
+
+
+    <!-- Example Content Row -->
 
     <!-- Example Content Row -->
 
@@ -155,6 +109,7 @@
                                 <div class="thomson-company">
                                     <span class="close-btn-20">Close</span>
                                 </div>
+                                
                                 <div class="contents">
                                     <p class="hotel-name">Villa Marchena</p>
                                     <p class="tagline">in Pollensa, Majorca</p>
@@ -181,9 +136,9 @@
                                     <button type="button" class="btn btn-success btn-lg btn-block btn-margin">View on Thomson.co.uk</button>
 
                                 </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                    
                         
                 
             </div>
@@ -192,9 +147,6 @@
         <!-- /.container -->
 
     </div>
-
-
-
 
 
 	<!-- Bottom Banner -->

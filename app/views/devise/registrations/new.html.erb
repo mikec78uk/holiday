@@ -2,37 +2,67 @@
 <% @meta_description = "Once registered you will be able to MONITOR PACKAGE HOLIDAY PRICES from Thomson and First Choice" %>
 
 <%= render partial: 'layouts/watchlistHeader' %>
-<div class="top-padding"></div>
-<div class="wrapper">
-	<div class="registration-form">
-    	<h2 class="devise">Register to start tracking holiday prices</h2>
-    		<% if flash[:alert].present? %>
-              <div data-alert class="home-flash">
-                <%= flash[:alert] %>
-              </div>
-    		<% end %>
-    		<% if flash[:notice].present? %>
-              <div data-alert class="home-flash">
-                <%= flash[:notice] %>
-              </div>
-    		<% end %>
-    		
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true,label: "Email Address", hint: "So we can contact you when the price changes" %>
-        <%= f.input :password, required: true, label: "Create a Password", hint: "Passwords should be at least  8 characters" %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-      <p class="terms-agreement">By signing up to Holidaytracker.co.uk you are agreeing to our <%= link_to "Terms of service", terms_page_path, class: "orange" %>.
-      <div class="form-actions">
-        <%= f.button :submit, "Start tracking prices", class: "devise" %>
-      </div>
-    <% end %>
 
-    <%= render "devise/shared/links" %>
-	</div>
+
+ <div class="content-section-b full-height">
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+
+                <h3>Register to start tracking holiday prices</h3>
+
+                <% if flash[:alert].present? %>
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <%= flash[:alert] %> 
+                  </div>
+                <% end %>
+                
+                <% if flash[:notice].present? %>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <%= flash[:notice] %>
+                  </div>
+                <% end %>
+        
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%= f.input :email, required: true, autofocus: true,label: "Email Address", hint: "So we can contact you when the price changes" %>
+                  <%= f.input :password, required: true, label: "Create a Password", hint: "Passwords should be at least  8 characters" %>
+                  <%= f.input :password_confirmation, required: true %>
+                </div>
+            
+                <div class="form-actions">
+                  <%= f.button :submit, "Start tracking prices", class: "btn btn-primary" %>
+                </div>
+
+              <% end %>
+              
+              <div class="margin-top">
+                <%= render "devise/shared/links" %>
+              </div>
+                
+              </div>
+            </div>
+        </div>
 </div>
-<div class="top-padding-footer"></div>
-<%= render partial: 'layouts/footer' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
