@@ -3,7 +3,7 @@ development:
   :port: 587
   :authentication: plain
   :user_name: clarke.michael.j
-  :password: Tildybear4
+  :password: Matilda99password
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
