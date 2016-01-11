@@ -2,8 +2,8 @@ development:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
-  :user_name: clarke.michael.j
-  :password: Matilda99password
+  :user_name: clarke
+  :password: NotmyPassword
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
