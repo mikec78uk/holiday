@@ -35,7 +35,7 @@ task daily_price: :environment do
 		
 		@history = History.new
 		@history.holiday_id = holiday.id
-		@history.price = @real_html.css("span.price-pp").text.gsub(/\D/, '').to_i
+		@history.price = @real_html.css("span.price-total").text.gsub(/\D/, '').to_i
 		@history.save		
 	
 	end
