@@ -132,7 +132,7 @@ class Holiday < ActiveRecord::Base
 			@real_html = Nokogiri::HTML(@raw_html)		
 
 
-				self.initial_price = @real_html.css("span.price-pp").text.gsub(/\D/, '').to_i			
+				self.initial_price = @real_html.css("span.price-total").text.gsub(/\D/, '').to_i			
 
 				self.hotel_name = @real_html.css("h1").first.text
 				#@holiday.duration
@@ -228,7 +228,8 @@ class Holiday < ActiveRecord::Base
     
     			@history = History.new
 				@history.holiday_id = self.id
-				@history.price = @real_html.css("span.price-pp").text.gsub(/\D/, '').to_i
+				# The below was changed from price-pp
+				@history.price = @real_html.css("span.price-total").text.gsub(/\D/, '').to_i
 				@history.save
 	
 			end
