@@ -81,15 +81,15 @@ task remove_dead_holidays: :environment do
 		end
 end
 
-# Keeps Histories limited to 7 after Heroku warning about database row limit
+# Keeps Histories limited to 3 after Heroku warning about database row limit
 task reduce_histories: :environment do
 	# Get all unique holiday_id values
 	@histories = History.uniq.pluck(:holiday_id)
 
-	# Run through each to keep the last 7
+	# Run through each to keep the last 3
 	@histories.each do |x|
-		# Get each one, order by created date, keep the last 7 and delete
-		History.where(holiday_id: x).order('created_at DESC').offset(7).destroy_all
+		# Get each one, order by created date, keep the last 3 and delete
+		History.where(holiday_id: x).order('created_at DESC').offset(3).destroy_all
 	end
 
 end
